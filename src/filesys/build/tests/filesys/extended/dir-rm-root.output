@@ -1,0 +1,35 @@
+Copying tests/filesys/extended/dir-rm-root into /tmp/GKeNKxNtYi.dsk...
+Copying tests/filesys/extended/tar into /tmp/GKeNKxNtYi.dsk...
+Writing command line to /tmp/9aYTZqYfdZ.dsk...
+warning: can't find squish-pty, so terminal input will fail
+bochs -q
+Kernel command line: -q -f put dir-rm-root put tar run dir-rm-root
+Pintos booting with 4,096 kB RAM...
+373 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'dir-rm-root' into the file system...
+Putting 'tar' into the file system...
+Executing 'dir-rm-root':
+(dir-rm-root) begin
+(dir-rm-root) remove "/" (must fail)
+(dir-rm-root) create "/a"
+(dir-rm-root) end
+dir-rm-root: exit(0)
+Execution of 'dir-rm-root' complete.
+Timer: 722 ticks
+Thread: 0 idle ticks, 651 kernel ticks, 74 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 248 reads, 459 writes
+hd1:0: 225 reads, 0 writes
+hd1:1: 0 reads, 0 writes
+Console: 1039 characters output
+Keyboard: 0 keys pressed
+Exception: 5 page faults
+Powering off...

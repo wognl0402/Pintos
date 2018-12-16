@@ -1,6 +1,6 @@
-Copying tests/vm/page-parallel into /tmp/7f98yvrfC0.dsk...
-Copying tests/vm/child-linear into /tmp/7f98yvrfC0.dsk...
-Writing command line to /tmp/9Jb51qUrMY.dsk...
+Copying tests/vm/page-parallel into /tmp/j3XwdjMUDr.dsk...
+Copying tests/vm/child-linear into /tmp/j3XwdjMUDr.dsk...
+Writing command line to /tmp/GZ3vVTGnky.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put page-parallel put child-linear run page-parallel
@@ -24,22 +24,22 @@ Executing 'page-parallel':
 (page-parallel) exec "child-linear"
 (page-parallel) wait for child 0
 child-linear: exit(66)
-(page-parallel) wait for child 1
 child-linear: exit(66)
+(page-parallel) wait for child 1
 (page-parallel) wait for child 2
 child-linear: exit(66)
-child-linear: exit(66)
 (page-parallel) wait for child 3
+child-linear: exit(66)
 (page-parallel) end
 page-parallel: exit(0)
 Execution of 'page-parallel' complete.
-Timer: 71457 ticks
-Thread: 0 idle ticks, 1247 kernel ticks, 70213 user ticks
+Timer: 72080 ticks
+Thread: 0 idle ticks, 1199 kernel ticks, 70892 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 203 reads, 434 writes
 hd1:0: 212 reads, 0 writes
-hd1:1: 16944 reads, 21136 writes
+hd1:1: 16928 reads, 21448 writes
 Console: 1392 characters output
 Keyboard: 0 keys pressed
-Exception: 3159 page faults
+Exception: 3157 page faults
 Powering off...

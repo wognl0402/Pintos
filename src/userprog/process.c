@@ -468,7 +468,7 @@ load (const char *f_name, void (**eip) (void), void **esp)
   process_activate ();
   
   /* Open executable file. */
-  
+  //printf("#### process.c: try to filesys_open  %s\n", argv[0]); 
   file = filesys_open (argv[0]);
   //free (file_name);
 

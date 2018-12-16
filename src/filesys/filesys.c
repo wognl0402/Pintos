@@ -7,6 +7,7 @@
 #include "filesys/inode.h"
 #include "filesys/directory.h"
 #include "devices/disk.h"
+#include "filesys/cache.h"
 
 /* The disk that contains the file system. */
 struct disk *filesys_disk;
@@ -24,6 +25,7 @@ filesys_init (bool format)
 
   inode_init ();
   free_map_init ();
+  cache_init ();
 
   if (format) 
     do_format ();
@@ -36,6 +38,7 @@ filesys_init (bool format)
 void
 filesys_done (void) 
 {
+  cache_destroy ();
   free_map_close ();
 }
 
@@ -70,9 +73,12 @@ filesys_open (const char *name)
   struct dir *dir = dir_open_root ();
   struct inode *inode = NULL;
 
-  if (dir != NULL)
-    dir_lookup (dir, name, &inode);
-  dir_close (dir);
+  if (dir != NULL){
+    //printf("in FILESYS_OPEN: name %s @@@@\n", name);
+	if (!dir_lookup (dir, name, &inode)){
+	  //printf("can't look up #####\n");
+    }
+  }dir_close (dir);
 
   return file_open (inode);
 }

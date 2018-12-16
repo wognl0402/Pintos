@@ -1,6 +1,6 @@
-Copying tests/filesys/base/syn-write into /tmp/KAAkWyMGPj.dsk...
-Copying tests/filesys/base/child-syn-wrt into /tmp/KAAkWyMGPj.dsk...
-Writing command line to /tmp/yobvlhWKgF.dsk...
+Copying tests/filesys/base/syn-write into /tmp/kHw2XS6lR9.dsk...
+Copying tests/filesys/base/child-syn-wrt into /tmp/kHw2XS6lR9.dsk...
+Writing command line to /tmp/IDqiJ3uxik.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put syn-write put child-syn-wrt run syn-write
@@ -54,8 +54,8 @@ child-syn-wrt: exit(9)
 (syn-write) end
 syn-write: exit(0)
 Execution of 'syn-write' complete.
-Timer: 1562 ticks
-Thread: 0 idle ticks, 633 kernel ticks, 936 user ticks
+Timer: 1561 ticks
+Thread: 0 idle ticks, 631 kernel ticks, 937 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 486 reads, 490 writes
 hd1:0: 228 reads, 0 writes

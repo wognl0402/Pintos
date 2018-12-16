@@ -1,5 +1,5 @@
-Copying tests/userprog/args-none into /tmp/a0fd8b6ZEj.dsk...
-Writing command line to /tmp/T87kb65M2G.dsk...
+Copying tests/userprog/args-none into /tmp/P9575Q8zye.dsk...
+Writing command line to /tmp/otDXpxkn83.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put args-none run args-none
@@ -23,7 +23,7 @@ Executing 'args-none':
 args-none: exit(0)
 Execution of 'args-none' complete.
 Timer: 333 ticks
-Thread: 0 idle ticks, 276 kernel ticks, 63 user ticks
+Thread: 0 idle ticks, 277 kernel ticks, 62 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 214 writes
 hd1:0: 103 reads, 0 writes
