@@ -10,16 +10,65 @@
 
 /* Identifies an inode. */
 #define INODE_MAGIC 0x494e4f44
+#define DIRECT_BLOCK 122
+#define BLOCK_PER_INDIRECT_BLOCK 128
 
 /* On-disk inode.
    Must be exactly DISK_SECTOR_SIZE bytes long. */
 struct inode_disk
   {
-    disk_sector_t start;                /* First data sector. */
-    off_t length;                       /* File size in bytes. */
+    disk_sector_t block[DIRECT_BLOCK];                /* First data sector. */
+    disk_sector_t sindirect;
+	disk_sector_t dindirect;
+    disk_sector_t start;
+
+	bool is_dir;
+	off_t length;                       /* File size in bytes. */
     unsigned magic;                     /* Magic number. */
-    uint32_t unused[125];               /* Not used. */
+    //uint32_t unused[125];               /* Not used. */
   };
+
+struct indirect_block{
+  disk_sector_t block[BLOCK_PER_INDIRECT_BLOCK];
+};
+
+
+
+static disk_sector_t index_to_sector (struct inode_disk *i, off_t index){
+  disk_sector_t target;
+  
+  // direct
+  if (index < DIRECT_BLOCK){
+	target = i->block[index];
+	return target;
+  }
+  index = index - DIRECT_BLOCK;
+  
+  // single indirect
+  if (index < BLOCK_PER_INDIRECT_BLOCK){
+	struct indirect_block *temp = calloc (1, sizeof *temp);
+	disk_read (filesys_disk, i->sindirect, temp);
+	
+	target = temp->block[index];
+	free(temp);
+	return target;
+  }
+  index = index - BLOCK_PER_INDIRECT_BLOCK;
+
+  // double indirect
+  off_t sindex = index / BLOCK_PER_INDIRECT_BLOCK;
+  off_t dindex = index % BLOCK_PER_INDIRECT_BLOCK;
+
+  struct indirect_block *temp = calloc (1, sizeof *temp);
+
+  disk_read (filesys_disk, i->dindirect, temp);
+  disk_read (filesys_disk, temp->block[sindex], temp);
+  
+  target = temp->block[dindex];
+  free (temp);
+  return target;
+}
+
 
 /* Returns the number of sectors to allocate for an inode SIZE
    bytes long. */
@@ -37,7 +86,7 @@ struct inode
     int open_cnt;                       /* Number of openers. */
     bool removed;                       /* True if deleted, false otherwise. */
     int deny_write_cnt;                 /* 0: writes ok, >0: deny writes. */
-    //struct inode_disk data;             /* Inode content. */
+    struct inode_disk data;             /* Inode content. */
     disk_sector_t start;
 	off_t length;
   };
@@ -54,9 +103,22 @@ byte_to_sector (const struct inode *inode, off_t pos)
   if (pos < inode->data.length)
     return inode->data.start + pos / DISK_SECTOR_SIZE;
   */
-  if (pos < inode->length)
-	return inode->start + pos / DISK_SECTOR_SIZE;
-  else
+  disk_sector_t ret;
+  if (0 <= pos && pos < inode->length){
+	off_t index = pos / DISK_SECTOR_SIZE;
+	struct inode_disk *temp = calloc (1, sizeof (*temp));
+	if (temp == NULL)
+	  PANIC("byte_to_sector can't calloc");
+
+	disk_read (filesys_disk, inode->sector, temp);
+//HAVE to do
+	ret = index_to_sector (&inode->data, index);
+	free (temp);
+	return ret;
+
+	//return index_to_sector (inode, index);
+	//return inode->start + pos / DISK_SECTOR_SIZE;
+  }else
     return -1;
 }
 
@@ -147,9 +209,10 @@ inode_open (disk_sector_t sector)
 
   //disk_read (filesys_disk, inode->sector, &inode->data);
   struct inode_disk data;
-  disk_read (filesys_disk, inode->sector, &data);
-  inode->start = data.start;
-  inode->length = data.length;
+  //disk_read (filesys_disk, inode->sector, &data);
+  disk_read (filesys_disk, inode->sector, &inode->data);
+  inode->start = inode->data.start;
+  inode->length = inode->data.length;
   return inode;
 }
 

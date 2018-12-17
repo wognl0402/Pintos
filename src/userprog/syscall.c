@@ -34,10 +34,10 @@ static int syscall_halt_ (struct intr_frame *f){
 }
 void exit_ (int status){  
   //struct dead_body *db;
-  if ( lock_held_by_current_thread (&filesys_lock))
-	release_filesys_lock ();
-  if ( lock_held_by_current_thread (&cache_lock))
-	lock_release (&cache_lock);
+  //if ( lock_held_by_current_thread (&filesys_lock))
+	//release_filesys_lock ();
+//  if ( lock_held_by_current_thread (&cache_lock))
+	//lock_release (&cache_lock);
   struct thread *cur = thread_current ();
   printf ("%s: exit(%d)\n", cur->name, status);
 
