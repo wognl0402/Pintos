@@ -101,6 +101,7 @@ struct cache_entry *cache_evict_SC (disk_sector_t sector, bool write){
 	  }
 	}
   }
+
   c->in_use++;
   c->sector = sector;
   disk_read (filesys_disk, c->sector, &c->buf);

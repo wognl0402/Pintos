@@ -502,6 +502,7 @@ static int syscall_write_ (struct intr_frame *f){
 	  if (fd==temp->fd){
 		//acquire_filesys_lock ();
 		f->eax=file_write(temp->file, buffer, size);
+		//PANIC("OKAY");
 		goto finish_;
 		//release_filesys_lock ();
 		//return 0;
