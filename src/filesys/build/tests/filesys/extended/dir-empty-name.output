@@ -1,0 +1,33 @@
+Copying tests/filesys/extended/dir-empty-name into /tmp/bV0cQ7A1WP.dsk...
+Copying tests/filesys/extended/tar into /tmp/bV0cQ7A1WP.dsk...
+Writing command line to /tmp/gL7HM3cTbS.dsk...
+warning: can't find squish-pty, so terminal input will fail
+bochs -q
+Kernel command line: -q -f put dir-empty-name put tar run dir-empty-name
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'dir-empty-name' into the file system...
+Putting 'tar' into the file system...
+Executing 'dir-empty-name':
+(dir-empty-name) begin
+(dir-empty-name) mkdir "" (must return false)
+dir-empty-name: exit(-1)
+Execution of 'dir-empty-name' complete.
+Timer: 2201 ticks
+Thread: 0 idle ticks, 2077 kernel ticks, 127 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 1013 reads, 688 writes
+hd1:0: 225 reads, 0 writes
+hd1:1: 0 reads, 0 writes
+Console: 1030 characters output
+Keyboard: 0 keys pressed
+Exception: 5 page faults
+Powering off...

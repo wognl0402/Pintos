@@ -30,7 +30,7 @@
 00000000000i[     ]   SB16 support: no
 00000000000i[     ]   USB support: no
 00000000000i[     ]   VGA extension support:  
-00000000000i[MEM0 ] allocated memory at 0x7f490c544010. after alignment, vector=0x7f490c545000
+00000000000i[MEM0 ] allocated memory at 0x2b7ac3f88010. after alignment, vector=0x2b7ac3f89000
 00000000000i[MEM0 ] 4.00MB
 00000000000i[MEM0 ] rom at 0xf0000/65536 ('/usr/local/share/bochs/BIOS-bochs-latest')
 00000000000i[MEM0 ] rom at 0xc0000/32768 ('/usr/local/share/bochs/VGABIOS-lgpl-latest')
@@ -46,10 +46,10 @@
 00000000000i[     ] init_mem of 'extfpuirq' plugin device by virtual method
 00000000000i[     ] init_mem of 'speaker' plugin device by virtual method
 00000000000i[     ] init_dev of 'harddrv' plugin device by virtual method
-00000000000i[HD   ] HD on ata0-0: '/tmp/QQRH2rI5II.dsk' 'flat' mode 
-00000000000i[HD   ] HD on ata0-1: '/tmp/aDKJd_T53M.dsk' 'flat' mode 
-00000000000i[HD   ] HD on ata1-0: '/tmp/cHY84fOwKO.dsk' 'flat' mode 
-00000000000i[HD   ] HD on ata1-1: '/tmp/QkV_3myHxf.dsk' 'flat' mode 
+00000000000i[HD   ] HD on ata0-0: '/tmp/iQEaRe9zm5.dsk' 'flat' mode 
+00000000000i[HD   ] HD on ata0-1: '/tmp/UlLHCwtn2b.dsk' 'flat' mode 
+00000000000i[HD   ] HD on ata1-0: '/tmp/aEkqNNXakx.dsk' 'flat' mode 
+00000000000i[HD   ] HD on ata1-1: '/tmp/9437VaF2VM.dsk' 'flat' mode 
 00000000000i[HD   ] Using boot sequence disk, none, none
 00000000000i[HD   ] Floppy boot signature check is enabled
 00000000000i[     ] init_dev of 'keyboard' plugin device by virtual method
@@ -76,27 +76,27 @@
 00000793268i[BIOS ] ata0-1: PCHS=4/16/63 translation=none LCHS=4/16/63
 00000848672i[BIOS ] ata1-0: PCHS=1/16/63 translation=none LCHS=1/16/63
 00000904090i[BIOS ] ata1-1: PCHS=8/16/63 translation=none LCHS=8/16/63
-00834029770p[UNMP ] >>PANIC<< Shutdown port: shutdown requested
-00834029770i[SYS  ] Last time is 834
-00834029770i[NGUI ] bx_nogui_gui_c::exit() not implemented yet.
-00834029770i[CPU  ] protected mode
-00834029770i[CPU  ] CS.d_b = 32 bit
-00834029770i[CPU  ] SS.d_b = 32 bit
-00834029770i[CPU  ] | EAX=0000006e  EBX=c002ff82  ECX=ffff8900  EDX=ffff8900
-00834029770i[CPU  ] | ESP=c002ff70  EBP=c002ff88  ESI=00000000  EDI=c0117c00
-00834029770i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af pf cf
-00834029770i[CPU  ] | SEG selector     base    limit G D
-00834029770i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-00834029770i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
-00834029770i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00834029770i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00834029770i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
-00834029770i[CPU  ] |  FS:0023( 0004| 0|  3) 00000000 000fffff 1 1
-00834029770i[CPU  ] |  GS:0023( 0004| 0|  3) 00000000 000fffff 1 1
-00834029770i[CPU  ] | EIP=c0100079 (c0100078)
-00834029770i[CPU  ] | CR0=0x80010015 CR1=0 CR2=0x0824b000
-00834029770i[CPU  ] | CR3=0x00117000 CR4=0x00000000
-00834029770i[CPU  ] >> ee
-00834029770i[CPU  ] >> : out dx, al
-00834029770i[     ] restoring default signal behavior
-00834029770i[CTRL ] quit_sim called with exit code 1
+00015340014p[UNMP ] >>PANIC<< Shutdown port: shutdown requested
+00015340014i[SYS  ] Last time is 15
+00015340014i[NGUI ] bx_nogui_gui_c::exit() not implemented yet.
+00015340014i[CPU  ] protected mode
+00015340014i[CPU  ] CS.d_b = 32 bit
+00015340014i[CPU  ] SS.d_b = 32 bit
+00015340014i[CPU  ] | EAX=0000006e  EBX=c002ff82  ECX=ffff8900  EDX=ffff8900
+00015340014i[CPU  ] | ESP=c002ff70  EBP=c002ff88  ESI=00000000  EDI=c0117c00
+00015340014i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df IF tf sf zf af pf cf
+00015340014i[CPU  ] | SEG selector     base    limit G D
+00015340014i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00015340014i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
+00015340014i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00015340014i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00015340014i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00015340014i[CPU  ] |  FS:0023( 0004| 0|  3) 00000000 000fffff 1 1
+00015340014i[CPU  ] |  GS:0023( 0004| 0|  3) 00000000 000fffff 1 1
+00015340014i[CPU  ] | EIP=c0100079 (c0100078)
+00015340014i[CPU  ] | CR0=0x80010015 CR1=0 CR2=0x7f000000
+00015340014i[CPU  ] | CR3=0x00117000 CR4=0x00000000
+00015340014i[CPU  ] >> ee
+00015340014i[CPU  ] >> : out dx, al
+00015340014i[     ] restoring default signal behavior
+00015340014i[CTRL ] quit_sim called with exit code 1

@@ -1,0 +1,5 @@
+FAIL
+Kernel panic in run: PANIC at ../../threads/synch.c:238 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
+Call stack: 0xc0122e74c
+Translation of call stack:
+0xc0122e74c: (unknown)

@@ -1,0 +1,423 @@
+Copying tests/userprog/rox-simple into /tmp/7kmZZOj1sv.dsk...
+Writing command line to /tmp/KNTbJGo6_M.dsk...
+warning: can't find squish-pty, so terminal input will fail
+bochs -q
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-Kernel PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
+Call stack: 0xc0120194Kernel PANIC recursion at ../../threads/thread.c:308 in thread_current().
+Kernel command line: -q -f put rox-simple run rox-simple
+Pintos booting with 4,096 kB RAM...
+372 pages available in kernel pool.
+372 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
+Formatting file system...done.
+Boot complete.
+Putting 'rox-simple' into the file system...
+Executing 'rox-simple':
+(rox-simple) begin
+(rox-simple) open "rox-simple"
+(rox-simple) read "rox-simple"
+(rox-simple) try to write "rox-simple"
+(rox-simple) end
+rox-simple: exit(0)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+rox-simple: exit(-1)
+Simulation terminated due to kernel panic.

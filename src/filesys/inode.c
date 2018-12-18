@@ -469,7 +469,7 @@ inode_read_at (struct inode *inode, void *buffer_, off_t size, off_t offset)
   uint8_t *buffer = buffer_;
   off_t bytes_read = 0;
   uint8_t *bounce = NULL;
-  lock_acquire (&i_lock);
+  //lock_acquire (&i_lock);
   //ASSERT (inode != NULL);
   while (size > 0) 
     {
@@ -521,7 +521,7 @@ inode_read_at (struct inode *inode, void *buffer_, off_t size, off_t offset)
       bytes_read += chunk_size;
     }
   free (bounce);
-  lock_release (&i_lock);
+//  lock_release (&i_lock);
   return bytes_read;
 }
 
@@ -537,7 +537,8 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
   const uint8_t *buffer = buffer_;
   off_t bytes_written = 0;
   uint8_t *bounce = NULL;
-
+  
+  inode_lock (inode);
   if (inode->deny_write_cnt)
     return 0;
 
@@ -559,7 +560,7 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
 	
 	//inode_unlock (inode);
   }
-  //lock_acquire (&i_lock);
+//  lock_acquire (&i_lock);
   while (size > 0) 
     {
       /* Sector to write, starting byte offset within sector. */
@@ -636,6 +637,7 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
       bytes_written += chunk_size;
     }
   //lock_release (&i_lock);
+  inode_unlock (inode);
   cache_destroy();
   free (bounce);
   return bytes_written;
