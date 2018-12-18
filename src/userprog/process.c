@@ -21,6 +21,7 @@
 #include "threads/vaddr.h"
 #include "vm/frame.h"
 #include "vm/page.h"
+#include "filesys/cache.h"
 
 #define MAX_ARG 64
 #define MAX_COM 128
@@ -258,6 +259,7 @@ process_exit (void)
   //free (&curr->spt);
   //curr->spt= NULL;
   //printf ("spt destruction done\n");
+  cache_destroy ();
 #endif
   struct thread *parent = get_thread (curr->pa_tid);
   if (parent != NULL){

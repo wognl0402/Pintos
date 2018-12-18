@@ -50,14 +50,14 @@ void exit_ (int status){
 		e=list_next (e)){
 	  temp = list_entry (e, struct dead_body, ch_elem);
 	  if (temp->ch_tid == cur->tid){
-		lock_acquire (&parent->ch_lock);
+		//lock_acquire (&parent->ch_lock);
 		cur->exit_status = status;
 		temp->user_kill = true;
 		//temp->exit_status = status;
 		//printf("%s, %d exit andwake\n", cur->name, cur->tid);
 		//temp->alive = false;
 		//cond_signal (&parent->ch_cond, &parent->ch_lock);
-		lock_release (&parent->ch_lock);
+		//lock_release (&parent->ch_lock);
 	  }
 	}
   }

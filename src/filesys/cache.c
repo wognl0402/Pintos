@@ -17,12 +17,16 @@ void cache_destroy (void){
   while (e != list_end (&cache)){
 	next = list_next (e);
 	struct cache_entry *c = list_entry (e, struct cache_entry, c_elem);
+	if (c->in_use>0)
+	  continue;
 	if (c->dirty){
-	  disk_write (filesys_disk, c->sector, &c->buf);
+	  disk_write (filesys_disk, c->sector, c->buf);
+	  c->dirty = false;
 	}
 	list_remove (&c->c_elem);
 	free (c);
 	e= next;
+	cache_size--;
   }
   lock_release (&cache_lock);
 
@@ -82,8 +86,10 @@ struct cache_entry *cache_evict_SC (disk_sector_t sector, bool write){
 	list_push_back (&cache, &c->c_elem);
   }
   else{
-	bool second = false;
+	bool second = true;
+
 	struct list_elem *e;
+	while (second){
 	for ( e = list_begin (&cache);
 		e != list_end (&cache);
 		e = list_next (e)){
@@ -93,20 +99,24 @@ struct cache_entry *cache_evict_SC (disk_sector_t sector, bool write){
 	  if (c->access){
 		c->access = false;
 	  }else{
+		//list_remove (e);
 		if (c->dirty){
 		  disk_write (filesys_disk, c->sector, &c->buf);
+		  
 		}
-		//second = true;
+		//free(c->buf);
+		second = false;
 		break;
 	  }
 	}
+	}
   }
 
-  c->in_use++;
+  c->in_use = 1;
   c->sector = sector;
-  disk_read (filesys_disk, c->sector, &c->buf);
   c->dirty = write;
   c->access = true;
+  disk_read (filesys_disk, sector, c->buf);
   return c;
 }
 

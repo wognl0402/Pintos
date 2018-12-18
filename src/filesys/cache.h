@@ -13,7 +13,7 @@ uint32_t cache_size;
 
 struct cache_entry {
   disk_sector_t sector;
-  struct lock sector_lock;
+//  struct lock sector_lock;
   uint8_t buf[DISK_SECTOR_SIZE];
   bool empty;
   bool dirty;

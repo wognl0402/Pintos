@@ -6,11 +6,25 @@
 #include <syscall.h>
 #include "tests/lib.h"
 #include "tests/main.h"
+#include <string.h>
 
 const char *test_name = "child-sort";
 
 unsigned char buf[128 * 1024];
 size_t histogram[256];
+
+static bool
+is_sorted (const unsigned char *buf, size_t size){
+  size_t i;
+  bool temp = true;
+  for (i=1; i<size; i++)
+	if (buf[i-1] > buf[i]){
+	  printf("FUCKED UP AT %d\n", i);
+	  temp = false;
+	}//return i;
+  return temp;
+}
+
 
 int
 main (int argc UNUSED, char *argv[]) 
@@ -26,6 +40,7 @@ main (int argc UNUSED, char *argv[])
 
   size = read (handle, buf, sizeof buf);
   for (i = 0; i < size; i++)
+  
     histogram[buf[i]]++;
   p = buf;
   for (i = 0; i < sizeof histogram / sizeof *histogram; i++) 
@@ -34,9 +49,43 @@ main (int argc UNUSED, char *argv[])
       while (j-- > 0)
         *p++ = i;
     }
+  /*//buf[0] = buf[size-1];
+  msg ("argv[1]=[%s], %d", argv[1], strcmp(argv[1], "buf1"));
+  */
   seek (handle, 0);
+  /*
+   * size_t temp = -1;
+  //if ((temp = is_sorted (buf, size)) != -1)
+  if (!is_sorted (buf,size))
+	msg("SORTING FUCKED UP");
+  
+  if (strcmp (argv[1], "buf4") == 0)
+	for (i=0; i<size; i++){
+	  if (i%10000==0 || i == size-1)
+		msg("buf1[%d] = %d", i, buf[i]);
+	}
+	
+  msg ("%s) buf before %d", argv[1], buf);
+  */
   write (handle, buf, size);
-  close (handle);
+  /*
+  if (!is_sorted (buf,size))
+  //if ((temp = is_sorted (buf, size)) != -1)
+	msg("SORTING FUCKEDDDDDDDDD UP at %s / idx: %d", argv[1], temp);
+  
+ seek (handle, 0);
+  read (handle, buf, size);
+  
+  msg ("%s) buf after %d", argv[1], buf);
+  if (strcmp (argv[1], "buf4") == 0)
+	for (i=0; i<size; i++){
+	  if (i%10000==0 || i == size-1)
+		msg("buf1[%d] = %d", i, buf[i]);
+	}
+  if (!is_sorted (buf,size))
+  //if ((temp = is_sorted (buf, size)) != -1)
+	msg("SORTING FUCKED UP at %s / idx: %d", argv[1], temp);
+ */ close (handle);
   
   return 123;
 }
