@@ -8,6 +8,7 @@
 #include "filesys/directory.h"
 #include "devices/disk.h"
 #include "filesys/cache.h"
+#include "threads/thread.h"
 
 /* The disk that contains the file system. */
 struct disk *filesys_disk;
@@ -47,14 +48,29 @@ filesys_done (void)
    Fails if a file named NAME already exists,
    or if internal memory allocation fails. */
 bool
-filesys_create (const char *name, off_t initial_size) 
+filesys_create (const char *name, off_t initial_size, bool is_dir) 
 {
   disk_sector_t inode_sector = 0;
-  struct dir *dir = dir_open_root ();
+  //struct dir *dir = dir_open_root ();
+  //char *path = malloc (strlen(name)+1);
+  //char *filename = malloc (strlen(name)+1); 
+  char path [strlen(name)+1];
+  char filename [strlen(name)+1];
+  get_dir (name, path);
+  get_filename (name, filename);
+
+  struct dir *dir = dir_open_path (path);
+
+  bool success = (dir != NULL
+                  && free_map_allocate (1, &inode_sector)
+                  && inode_create (inode_sector, initial_size, is_dir)
+                  && dir_add (dir, filename, inode_sector));
+  /*
   bool success = (dir != NULL
                   && free_map_allocate (1, &inode_sector)
                   && inode_create (inode_sector, initial_size)
                   && dir_add (dir, name, inode_sector));
+  */
   if (!success && inode_sector != 0) 
     free_map_release (inode_sector, 1);
   dir_close (dir);
@@ -70,16 +86,31 @@ filesys_create (const char *name, off_t initial_size)
 struct file *
 filesys_open (const char *name)
 {
-  struct dir *dir = dir_open_root ();
-  struct inode *inode = NULL;
+  char path [strlen(name)+1];
+  char filename [strlen(name)+1];
+  get_dir (name, path);
+  get_filename (name, filename);
 
+  struct dir *dir = dir_open_path (path);
+
+  //struct dir *dir = dir_open_root ();
+  struct inode *inode = NULL;
+  
+  /*
   if (dir != NULL){
     //printf("in FILESYS_OPEN: name %s @@@@\n", name);
-	if (!dir_lookup (dir, name, &inode)){
+	if (!dir_lookup (dir, filename, &inode)){
 	  //printf("can't look up #####\n");
     }
   }dir_close (dir);
-
+*/
+  if (dir == NULL)
+	return NULL;
+  if (strlen(filename) >0){
+    dir_lookup (dir, filename, &inode);
+    dir_close (dir);
+  }else
+	inode = dir_get_inode (dir);
   return file_open (inode);
 }
 
@@ -90,13 +121,32 @@ filesys_open (const char *name)
 bool
 filesys_remove (const char *name) 
 {
-  struct dir *dir = dir_open_root ();
-  bool success = dir != NULL && dir_remove (dir, name);
+  char path [strlen(name)+1];
+  char filename [strlen(name)+1];
+  get_dir (name, path);
+  get_filename (name, filename);
+
+  struct dir *dir = dir_open_path (path);
+
+  //struct dir *dir = dir_open_root ();
+  bool success = dir != NULL && dir_remove (dir, filename);
   dir_close (dir); 
 
   return success;
 }
-
+
+bool
+filesys_chdir (const char *path){
+  struct dir *dir = dir_open_path (path);
+
+  if (dir == NULL)
+	return false;
+
+  dir_close (thread_current ()->cwd);
+  thread_current ()->cwd = dir;
+  return true;
+}
+
 /* Formats the file system. */
 static void
 do_format (void)

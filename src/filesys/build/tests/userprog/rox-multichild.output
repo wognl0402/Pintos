@@ -1,6 +1,6 @@
-Copying tests/userprog/rox-multichild into /tmp/tBwOYzgaLV.dsk...
-Copying tests/userprog/child-rox into /tmp/tBwOYzgaLV.dsk...
-Writing command line to /tmp/alWqMFUReX.dsk...
+Copying tests/userprog/rox-multichild into /tmp/HuzGiAvywc.dsk...
+Copying tests/userprog/child-rox into /tmp/HuzGiAvywc.dsk...
+Writing command line to /tmp/DihEqsZeqj.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put rox-multichild put child-rox run rox-multichild
@@ -27,5 +27,41 @@ Executing 'rox-multichild':
 (child-rox) exec "child-rox 4"
 (child-rox) begin
 (child-rox) try to write "child-rox"
-
-TIMEOUT after 60 seconds of host CPU time
+(child-rox) exec "child-rox 3"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 2"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) exec "child-rox 1"
+(child-rox) begin
+(child-rox) try to write "child-rox"
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(child-rox) try to write "child-rox"
+(child-rox) end
+child-rox: exit(12)
+(rox-multichild) write "child-rox"
+(rox-multichild) end
+rox-multichild: exit(0)
+Execution of 'rox-multichild' complete.
+Timer: 2900 ticks
+Thread: 0 idle ticks, 2165 kernel ticks, 738 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 1215 reads, 681 writes
+hd1:0: 222 reads, 0 writes
+hd1:1: 0 reads, 0 writes
+Console: 1954 characters output
+Keyboard: 0 keys pressed
+Exception: 25 page faults
+Powering off...

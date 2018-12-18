@@ -1,6 +1,6 @@
-Copying tests/filesys/base/syn-read into /tmp/W0F1gvDW7a.dsk...
-Copying tests/filesys/base/child-syn-read into /tmp/W0F1gvDW7a.dsk...
-Writing command line to /tmp/ZCRltJ3uh3.dsk...
+Copying tests/filesys/base/syn-read into /tmp/SomU_QQk2m.dsk...
+Copying tests/filesys/base/child-syn-read into /tmp/SomU_QQk2m.dsk...
+Writing command line to /tmp/22LTokwvSN.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put syn-read put child-syn-read run syn-read
@@ -27,26 +27,26 @@ Executing 'syn-read':
 (syn-read) exec child 3 of 10: "child-syn-read 2"
 (syn-read) exec child 4 of 10: "child-syn-read 3"
 (syn-read) exec child 5 of 10: "child-syn-read 4"
-child-syn-read: exit(2)
 (syn-read) exec child 6 of 10: "child-syn-read 5"
+child-syn-read: exit(1)
 (syn-read) exec child 7 of 10: "child-syn-read 6"
+child-syn-read: exit(5)
 (syn-read) exec child 8 of 10: "child-syn-read 7"
 (syn-read) exec child 9 of 10: "child-syn-read 8"
 (syn-read) exec child 10 of 10: "child-syn-read 9"
-child-syn-read: exit(0)
-(syn-read) wait for child 1 of 10 returned 0 (expected 0)
-child-syn-read: exit(6)
+child-syn-read: exit(2)
+child-syn-read: exit(7)
+child-syn-read: exit(8)
 child-syn-read: exit(4)
 child-syn-read: exit(3)
-child-syn-read: exit(8)
+child-syn-read: exit(6)
 child-syn-read: exit(9)
-child-syn-read: exit(1)
+child-syn-read: exit(0)
+(syn-read) wait for child 1 of 10 returned 0 (expected 0)
 (syn-read) wait for child 2 of 10 returned 1 (expected 1)
 (syn-read) wait for child 3 of 10 returned 2 (expected 2)
 (syn-read) wait for child 4 of 10 returned 3 (expected 3)
 (syn-read) wait for child 5 of 10 returned 4 (expected 4)
-child-syn-read: exit(7)
-child-syn-read: exit(5)
 (syn-read) wait for child 6 of 10 returned 5 (expected 5)
 (syn-read) wait for child 7 of 10 returned 6 (expected 6)
 (syn-read) wait for child 8 of 10 returned 7 (expected 7)
@@ -55,10 +55,10 @@ child-syn-read: exit(5)
 (syn-read) end
 syn-read: exit(0)
 Execution of 'syn-read' complete.
-Timer: 24366 ticks
-Thread: 0 idle ticks, 2333 kernel ticks, 22040 user ticks
+Timer: 23862 ticks
+Thread: 0 idle ticks, 2336 kernel ticks, 21533 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 11739 reads, 711 writes
+hd0:1: 11723 reads, 711 writes
 hd1:0: 229 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 2400 characters output

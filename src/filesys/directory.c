@@ -5,7 +5,7 @@
 #include "filesys/filesys.h"
 #include "filesys/inode.h"
 #include "threads/malloc.h"
-
+#include "threads/thread.h"
 /* A directory. */
 struct dir 
   {
@@ -26,7 +26,7 @@ struct dir_entry
 bool
 dir_create (disk_sector_t sector, size_t entry_cnt) 
 {
-  return inode_create (sector, entry_cnt * sizeof (struct dir_entry));
+  return inode_create (sector, entry_cnt * sizeof (struct dir_entry), true);
 }
 
 /* Opens and returns the directory for the given INODE, of which
@@ -55,6 +55,44 @@ struct dir *
 dir_open_root (void)
 {
   return dir_open (inode_open (ROOT_DIR_SECTOR));
+}
+
+struct dir *
+dir_open_path (const char *path){
+  int len = strlen (path);
+  char *s = malloc (len+1);
+  memcpy (s, path, len+1);
+
+//  struct dir *d = dir_open_root ();
+  struct dir *d;
+  if (path[0] == 47)
+	d = dir_open_root ();
+  else{
+	if (thread_current ()->cwd == NULL)
+	  d = dir_open_root ();
+	else
+	  d = dir_reopen (thread_current ()->cwd);
+  }
+
+  char *token, *save;
+  for (token = strtok_r (s, "/", &save);
+	  token != NULL;
+	  token = strtok_r (NULL, "/", &save)){
+	struct inode *inode = NULL;
+	if (!dir_lookup (d, token, &inode)){
+	  dir_close (d);
+	  return NULL;
+	}
+
+	struct dir *temp = dir_open (inode);
+	if (temp == NULL){
+	  dir_close (d);
+	  return NULL;
+	}
+	dir_close(d);
+	d = temp;
+  }
+  return d;
 }
 
 /* Opens and returns a new directory for the same inode as DIR.
@@ -235,3 +273,52 @@ dir_readdir (struct dir *dir, char name[NAME_MAX + 1])
     }
   return false;
 }
+
+void get_filename (const char *path, char *filename){
+  int l = strlen(path);
+  char *fn = malloc (l+1);
+  strlcpy (fn, path, l+1);
+  char *token, *save;
+  char *temp = "";
+  for (token = strtok_r (fn, "/", &save);
+	  token != NULL;
+	  token = strtok_r (NULL, "/", &save)){
+  //printf("### %s ###\n", fn);
+    temp = token;
+  }
+//printf ("@@@ %s @@@\n", token);
+  strlcpy (filename, temp, (strlen(temp)+1));
+  free (fn);
+}
+
+void get_dir (const char *path, char *directory){
+  int l = strlen(path);
+  char *fn = malloc (l+1);
+  memcpy (fn, path, l+1);
+
+  char *dir = directory;
+  if (l>0 && path[0] == '/'){
+	if(dir) *dir++ = '/';
+  }
+
+  char *token, *save;
+  char *temp = "";
+  for (token = strtok_r (fn, "/", &save);
+	  token != NULL;
+	  token = strtok_r (NULL, "/", &save)){
+	
+	int i = strlen (temp);
+	
+	if (dir && i >0){
+	  memcpy (dir, temp, i);
+	  dir[i] = '/';
+	  dir += i+1;
+	}
+	
+	temp = token;
+  }
+
+  if(dir) *dir = '\0';
+  free (fn);
+}
+

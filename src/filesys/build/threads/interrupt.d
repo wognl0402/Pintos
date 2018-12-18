@@ -9,4 +9,5 @@ threads/interrupt.o: ../../threads/interrupt.c ../../threads/interrupt.h \
   ../../threads/synch.h ../../threads/palloc.h ../../threads/thread.h \
   ../../threads/pte.h ../../threads/vaddr.h ../../threads/loader.h \
   ../../userprog/pagedir.h ../../filesys/file.h ../../filesys/off_t.h \
-  ../../devices/timer.h ../../lib/round.h
+  ../../filesys/directory.h ../../devices/disk.h ../../devices/timer.h \
+  ../../lib/round.h

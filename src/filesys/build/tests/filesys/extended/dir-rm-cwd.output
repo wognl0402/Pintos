@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/dir-rm-cwd into /tmp/f3ciE96z8T.dsk...
-Copying tests/filesys/extended/tar into /tmp/f3ciE96z8T.dsk...
-Writing command line to /tmp/Bpt09iXlpU.dsk...
+Copying tests/filesys/extended/dir-rm-cwd into /tmp/solJfeZJQG.dsk...
+Copying tests/filesys/extended/tar into /tmp/solJfeZJQG.dsk...
+Writing command line to /tmp/ByBK9MmtsJ.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rm-cwd put tar run dir-rm-cwd
@@ -19,16 +19,27 @@ Putting 'tar' into the file system...
 Executing 'dir-rm-cwd':
 (dir-rm-cwd) begin
 (dir-rm-cwd) open "/"
-(dir-rm-cwd) open "/": FAILED
+(dir-rm-cwd) mkdir "a"
+(dir-rm-cwd) open "/a"
+(dir-rm-cwd) verify "/a" is empty
+(dir-rm-cwd) "/" and "/a" must have different inumbers
+(dir-rm-cwd) chdir "a"
+(dir-rm-cwd) try to remove "/a"
+(dir-rm-cwd) remove successful
+(dir-rm-cwd) open "/a" (must fail)
+(dir-rm-cwd) open "." (must fail)
+(dir-rm-cwd) open ".." (must fail)
+(dir-rm-cwd) create "x" (must fail)
+(dir-rm-cwd) create "x" (must fail): FAILED
 dir-rm-cwd: exit(1)
 Execution of 'dir-rm-cwd' complete.
-Timer: 2270 ticks
-Thread: 0 idle ticks, 2126 kernel ticks, 151 user ticks
+Timer: 2437 ticks
+Thread: 0 idle ticks, 2130 kernel ticks, 314 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1052 reads, 703 writes
+hd0:1: 1108 reads, 722 writes
 hd1:0: 230 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1007 characters output
+Console: 1382 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...

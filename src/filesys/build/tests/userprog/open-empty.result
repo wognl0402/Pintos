@@ -1,1 +1,2 @@
-PASS
+FAIL
+run: open() returned 3 instead of -1: FAILED

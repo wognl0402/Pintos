@@ -1,6 +1,6 @@
-Copying tests/userprog/read-boundary into /tmp/0DMuQ9JM0B.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/0DMuQ9JM0B.dsk...
-Writing command line to /tmp/foSHCNe26f.dsk...
+Copying tests/userprog/read-boundary into /tmp/qDzIJMgPZS.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/qDzIJMgPZS.dsk...
+Writing command line to /tmp/cxjLWxQDRc.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put read-boundary put sample.txt run read-boundary
@@ -22,8 +22,8 @@ Executing 'read-boundary':
 (read-boundary) end
 read-boundary: exit(0)
 Execution of 'read-boundary' complete.
-Timer: 1390 ticks
-Thread: 0 idle ticks, 1237 kernel ticks, 156 user ticks
+Timer: 1397 ticks
+Thread: 0 idle ticks, 1242 kernel ticks, 158 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 566 reads, 343 writes
 hd1:0: 110 reads, 0 writes

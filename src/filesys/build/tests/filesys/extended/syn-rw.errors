@@ -15,3 +15,7 @@ Constant subroutine SIGVTALRM redefined at /home/cs20140496/Pintos/src/utils//pi
 00000000000i[     ] reading configuration from bochsrc.txt
 00000000000i[     ] installing nogui module as the Bochs GUI
 00000000000i[     ] using log file bochsout.txt
+========================================================================
+Bochs is exiting with the following message:
+[UNMP ] Shutdown port: shutdown requested
+========================================================================

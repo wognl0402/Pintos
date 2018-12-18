@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/grow-file-size into /tmp/wcjYd_ePyJ.dsk...
-Copying tests/filesys/extended/tar into /tmp/wcjYd_ePyJ.dsk...
-Writing command line to /tmp/pGo50ZAYms.dsk...
+Copying tests/filesys/extended/grow-file-size into /tmp/5sUSAfDFS_.dsk...
+Copying tests/filesys/extended/tar into /tmp/5sUSAfDFS_.dsk...
+Writing command line to /tmp/aLX04Dvp7S.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-file-size put tar run grow-file-size
@@ -28,10 +28,10 @@ Executing 'grow-file-size':
 (grow-file-size) end
 grow-file-size: exit(0)
 Execution of 'grow-file-size' complete.
-Timer: 2921 ticks
-Thread: 0 idle ticks, 2099 kernel ticks, 825 user ticks
+Timer: 2656 ticks
+Thread: 0 idle ticks, 2099 kernel ticks, 560 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1261 reads, 829 writes
+hd0:1: 1259 reads, 829 writes
 hd1:0: 227 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 1275 characters output

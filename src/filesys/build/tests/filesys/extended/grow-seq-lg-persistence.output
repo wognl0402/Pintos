@@ -1,4 +1,4 @@
-Writing command line to /tmp/vcFDKa4osd.dsk...
+Writing command line to /tmp/D88NUfS8vB.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q run 'tar fs.tar /' get fs.tar
@@ -12,18 +12,17 @@ hd1:0: detected 3,024 sector (1 MB) disk, model "Generic 1234", serial "BXHD0002
 hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
 Boot complete.
 Executing 'tar fs.tar /':
-/: open failed
-tar: exit(1)
+tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Getting 'fs.tar' from the file system...
-Timer: 408 ticks
-Thread: 0 idle ticks, 201 kernel ticks, 210 user ticks
+Timer: 9959 ticks
+Thread: 0 idle ticks, 1396 kernel ticks, 8566 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 131 reads, 13 writes
-hd1:0: 0 reads, 3 writes
+hd0:1: 4613 reads, 1873 writes
+hd1:0: 0 reads, 373 writes
 hd1:1: 0 reads, 0 writes
-Console: 856 characters output
+Console: 849 characters output
 Keyboard: 0 keys pressed
-Exception: 3 page faults
+Exception: 4 page faults
 Powering off...
-Copying tests/filesys/extended/grow-seq-lg.tar out of /tmp/iULXRG77KC.dsk...
+Copying tests/filesys/extended/grow-seq-lg.tar out of /tmp/jjXyPdtyBA.dsk...

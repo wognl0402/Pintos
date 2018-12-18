@@ -1,6 +1,6 @@
-Copying tests/userprog/rox-child into /tmp/6Ixp2jxCYs.dsk...
-Copying tests/userprog/child-rox into /tmp/6Ixp2jxCYs.dsk...
-Writing command line to /tmp/A11ebyUXtS.dsk...
+Copying tests/userprog/rox-child into /tmp/3kRauFxJMj.dsk...
+Copying tests/userprog/child-rox into /tmp/3kRauFxJMj.dsk...
+Writing command line to /tmp/2s7gRtBXj7.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put rox-child put child-rox run rox-child
@@ -25,16 +25,19 @@ Executing 'rox-child':
 (child-rox) begin
 (child-rox) try to write "child-rox"
 (child-rox) try to write "child-rox"
-Kernel PANIC at ../../threads/synch.c:238 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
-Call stack: 0xc0122e74child-rox: exit(-1)
-Kernel PANIC recursion at ../../threads/synch.c:238 in lock_acquire().
-Timer: 2350 ticks
-Thread: 0 idle ticks, 2029 kernel ticks, 321 user ticks
+(child-rox) end
+child-rox: exit(12)
+(rox-child) write "child-rox"
+(rox-child) end
+rox-child: exit(0)
+Execution of 'rox-child' complete.
+Timer: 2371 ticks
+Thread: 0 idle ticks, 2072 kernel ticks, 306 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1072 reads, 680 writes
+hd0:1: 1071 reads, 681 writes
 hd1:0: 222 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1347 characters output
+Console: 1253 characters output
 Keyboard: 0 keys pressed
-Exception: 10 page faults
+Exception: 9 page faults
 Powering off...

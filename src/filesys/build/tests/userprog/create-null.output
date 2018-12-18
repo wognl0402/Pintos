@@ -1,5 +1,5 @@
-Copying tests/userprog/create-null into /tmp/NqD0ZgiAQg.dsk...
-Writing command line to /tmp/MNAIoA4QVf.dsk...
+Copying tests/userprog/create-null into /tmp/IVgxEa_MBh.dsk...
+Writing command line to /tmp/kOtQoVy3hW.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put create-null run create-null
@@ -18,10 +18,10 @@ Executing 'create-null':
 (create-null) begin
 create-null: exit(-1)
 Execution of 'create-null' complete.
-Timer: 1266 ticks
-Thread: 0 idle ticks, 1147 kernel ticks, 122 user ticks
+Timer: 1267 ticks
+Thread: 0 idle ticks, 1146 kernel ticks, 124 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 501 reads, 323 writes
+hd0:1: 502 reads, 323 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 916 characters output

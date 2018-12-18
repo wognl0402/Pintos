@@ -1,5 +1,5 @@
-Copying tests/userprog/close-stdout into /tmp/RG1QVgGExt.dsk...
-Writing command line to /tmp/F96eVIsgAh.dsk...
+Copying tests/userprog/close-stdout into /tmp/G4YuAH2VD1.dsk...
+Writing command line to /tmp/8peMl5v9NI.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put close-stdout run close-stdout
@@ -18,10 +18,10 @@ Executing 'close-stdout':
 (close-stdout) begin
 close-stdout: exit(-1)
 Execution of 'close-stdout' complete.
-Timer: 1253 ticks
-Thread: 0 idle ticks, 1138 kernel ticks, 118 user ticks
+Timer: 1254 ticks
+Thread: 0 idle ticks, 1137 kernel ticks, 120 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 497 reads, 320 writes
+hd0:1: 498 reads, 320 writes
 hd1:0: 103 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 923 characters output

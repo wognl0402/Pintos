@@ -1,5 +1,5 @@
-Copying tests/userprog/create-empty into /tmp/D1PlD99PSx.dsk...
-Writing command line to /tmp/ktnmK8wmWc.dsk...
+Copying tests/userprog/create-empty into /tmp/Vifhkt8aqu.dsk...
+Writing command line to /tmp/Si6By6vdUz.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put create-empty run create-empty
@@ -20,8 +20,8 @@ Executing 'create-empty':
 (create-empty) end
 create-empty: exit(0)
 Execution of 'create-empty' complete.
-Timer: 1286 ticks
-Thread: 0 idle ticks, 1147 kernel ticks, 142 user ticks
+Timer: 1291 ticks
+Thread: 0 idle ticks, 1149 kernel ticks, 145 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 508 reads, 328 writes
 hd1:0: 104 reads, 0 writes

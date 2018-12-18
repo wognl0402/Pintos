@@ -130,23 +130,11 @@ verify (void)
     {
       while (histogram[hist_idx]-- > 0) 
         {
-           if (buf2[buf_idx] != hist_idx){
-			 //if (buf_idx % 1000 == 0)
-			 if (buf_idx %1000 == 0){  
-			 if (buf2[buf_idx] < hist_idx)
-			 msg("failed, buf2[%d]=%d while hist_idx=[%d]", buf_idx, buf2[buf_idx],hist_idx);
-			 else
-			 msg("FAILED, buf2[%d]=%d while hist_idx=[%d]", buf_idx, buf2[buf_idx],hist_idx);
-
-			 }
-			}
-            //fail ("bad value %d in byte %zu", buf2[buf_idx], buf_idx);
-          buf_idx++;
- 	/*		
+     		
 		  if (buf2[buf_idx] != hist_idx)
             fail ("bad value %d in byte %zu", buf2[buf_idx], buf_idx);
           buf_idx++;
-     */
+     
 	 	} 
     }
 

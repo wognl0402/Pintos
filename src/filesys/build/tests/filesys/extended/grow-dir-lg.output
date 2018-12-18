@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/grow-dir-lg into /tmp/GaeqlmVKH7.dsk...
-Copying tests/filesys/extended/tar into /tmp/GaeqlmVKH7.dsk...
-Writing command line to /tmp/V41_iwYw9K.dsk...
+Copying tests/filesys/extended/grow-dir-lg into /tmp/cJx0cBrbCT.dsk...
+Copying tests/filesys/extended/tar into /tmp/cJx0cBrbCT.dsk...
+Writing command line to /tmp/tnnfOiD3SE.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-dir-lg put tar run grow-dir-lg
@@ -19,15 +19,66 @@ Putting 'tar' into the file system...
 Executing 'grow-dir-lg':
 (grow-dir-lg) begin
 (grow-dir-lg) mkdir /x
-grow-dir-lg: exit(-1)
+(grow-dir-lg) creating and checking "/x/file0"
+(grow-dir-lg) creating and checking "/x/file1"
+(grow-dir-lg) creating and checking "/x/file2"
+(grow-dir-lg) creating and checking "/x/file3"
+(grow-dir-lg) creating and checking "/x/file4"
+(grow-dir-lg) creating and checking "/x/file5"
+(grow-dir-lg) creating and checking "/x/file6"
+(grow-dir-lg) creating and checking "/x/file7"
+(grow-dir-lg) creating and checking "/x/file8"
+(grow-dir-lg) creating and checking "/x/file9"
+(grow-dir-lg) creating and checking "/x/file10"
+(grow-dir-lg) creating and checking "/x/file11"
+(grow-dir-lg) creating and checking "/x/file12"
+(grow-dir-lg) creating and checking "/x/file13"
+(grow-dir-lg) creating and checking "/x/file14"
+(grow-dir-lg) creating and checking "/x/file15"
+(grow-dir-lg) creating and checking "/x/file16"
+(grow-dir-lg) creating and checking "/x/file17"
+(grow-dir-lg) creating and checking "/x/file18"
+(grow-dir-lg) creating and checking "/x/file19"
+(grow-dir-lg) creating and checking "/x/file20"
+(grow-dir-lg) creating and checking "/x/file21"
+(grow-dir-lg) creating and checking "/x/file22"
+(grow-dir-lg) creating and checking "/x/file23"
+(grow-dir-lg) creating and checking "/x/file24"
+(grow-dir-lg) creating and checking "/x/file25"
+(grow-dir-lg) creating and checking "/x/file26"
+(grow-dir-lg) creating and checking "/x/file27"
+(grow-dir-lg) creating and checking "/x/file28"
+(grow-dir-lg) creating and checking "/x/file29"
+(grow-dir-lg) creating and checking "/x/file30"
+(grow-dir-lg) creating and checking "/x/file31"
+(grow-dir-lg) creating and checking "/x/file32"
+(grow-dir-lg) creating and checking "/x/file33"
+(grow-dir-lg) creating and checking "/x/file34"
+(grow-dir-lg) creating and checking "/x/file35"
+(grow-dir-lg) creating and checking "/x/file36"
+(grow-dir-lg) creating and checking "/x/file37"
+(grow-dir-lg) creating and checking "/x/file38"
+(grow-dir-lg) creating and checking "/x/file39"
+(grow-dir-lg) creating and checking "/x/file40"
+(grow-dir-lg) creating and checking "/x/file41"
+(grow-dir-lg) creating and checking "/x/file42"
+(grow-dir-lg) creating and checking "/x/file43"
+(grow-dir-lg) creating and checking "/x/file44"
+(grow-dir-lg) creating and checking "/x/file45"
+(grow-dir-lg) creating and checking "/x/file46"
+(grow-dir-lg) creating and checking "/x/file47"
+(grow-dir-lg) creating and checking "/x/file48"
+(grow-dir-lg) creating and checking "/x/file49"
+(grow-dir-lg) end
+grow-dir-lg: exit(0)
 Execution of 'grow-dir-lg' complete.
-Timer: 2217 ticks
-Thread: 0 idle ticks, 2095 kernel ticks, 125 user ticks
+Timer: 13691 ticks
+Thread: 0 idle ticks, 2101 kernel ticks, 11593 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1021 reads, 694 writes
+hd0:1: 7777 reads, 1154 writes
 hd1:0: 227 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 986 characters output
+Console: 3397 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

@@ -1,5 +1,5 @@
-Copying tests/userprog/read-stdout into /tmp/uXXHb9ZKYY.dsk...
-Writing command line to /tmp/7VL_714CnN.dsk...
+Copying tests/userprog/read-stdout into /tmp/fjExoZvtZQ.dsk...
+Writing command line to /tmp/60RjlDahHt.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put read-stdout run read-stdout
@@ -18,10 +18,10 @@ Executing 'read-stdout':
 (read-stdout) begin
 read-stdout: exit(-1)
 Execution of 'read-stdout' complete.
-Timer: 1266 ticks
-Thread: 0 idle ticks, 1147 kernel ticks, 122 user ticks
+Timer: 1271 ticks
+Thread: 0 idle ticks, 1149 kernel ticks, 125 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 501 reads, 323 writes
+hd0:1: 502 reads, 323 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 916 characters output

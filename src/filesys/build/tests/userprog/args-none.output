@@ -1,5 +1,5 @@
-Copying tests/userprog/args-none into /tmp/Pi_WO8_c2J.dsk...
-Writing command line to /tmp/U4DJIOZd22.dsk...
+Copying tests/userprog/args-none into /tmp/MD9VFT8eAE.dsk...
+Writing command line to /tmp/gltsDSdBIM.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put args-none run args-none
@@ -22,10 +22,10 @@ Executing 'args-none':
 (args) end
 args-none: exit(0)
 Execution of 'args-none' complete.
-Timer: 1263 ticks
-Thread: 0 idle ticks, 1137 kernel ticks, 133 user ticks
+Timer: 1264 ticks
+Thread: 0 idle ticks, 1135 kernel ticks, 136 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 497 reads, 320 writes
+hd0:1: 498 reads, 320 writes
 hd1:0: 103 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 974 characters output

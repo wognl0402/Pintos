@@ -96,6 +96,7 @@ struct inode
     disk_sector_t start;
 	off_t length;
 	struct lock lock;
+	bool is_dir;
   };
 
 /* Returns the disk sector that contains byte offset POS within
@@ -242,7 +243,7 @@ bool inode_alloc (struct inode_disk *i, off_t length){
 }
 
 bool
-inode_create (disk_sector_t sector, off_t length)
+inode_create (disk_sector_t sector, off_t length, bool is_dir)
 {
   struct inode_disk *disk_inode = NULL;
   bool success = false;
@@ -260,6 +261,7 @@ inode_create (disk_sector_t sector, off_t length)
       size_t sectors = bytes_to_sectors (length);
       disk_inode->length = length;
       disk_inode->magic = INODE_MAGIC;
+	  disk_inode->is_dir = is_dir;
  	  if (inode_alloc (disk_inode, length)){
 		//PANIC("WHAT");
 		disk_write (filesys_disk, sector, disk_inode);
@@ -320,7 +322,7 @@ inode_open (disk_sector_t sector)
   inode->open_cnt = 1;
   inode->deny_write_cnt = 0;
   inode->removed = false;
-
+  
   lock_init (&inode->lock);
   //disk_read (filesys_disk, inode->sector, &inode->data);
   struct inode_disk *data = calloc (1, sizeof *data);
@@ -328,7 +330,7 @@ inode_open (disk_sector_t sector)
   //disk_read (filesys_disk, inode->sector, &inode->data);
   //inode->start = datastart;
   inode->length = data->length;
-  
+  inode->is_dir = data->is_dir;
   //lock_release (&i_lock);
   return inode;
 }
@@ -537,10 +539,12 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
   const uint8_t *buffer = buffer_;
   off_t bytes_written = 0;
   uint8_t *bounce = NULL;
-  
-  inode_lock (inode);
+ 
+  //if (inode_is_dir (inode))
+	//return 0;
   if (inode->deny_write_cnt)
     return 0;
+  inode_lock (inode);
 
   if ( offset + size > inode->length){
 	
@@ -668,6 +672,11 @@ off_t
 inode_length (const struct inode *inode)
 {
   return inode->length;
+}
+
+bool
+inode_is_dir (const struct inode *inode){
+  return inode->is_dir;
 }
 
 void inode_lock (const struct inode *inode){

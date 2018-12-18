@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-over-code into /tmp/dBWHHa9CWi.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/dBWHHa9CWi.dsk...
-Writing command line to /tmp/immomXM35I.dsk...
+Copying tests/vm/mmap-over-code into /tmp/irmx3j4jE5.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/irmx3j4jE5.dsk...
+Writing command line to /tmp/rqWPBH_IdR.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-over-code put sample.txt run mmap-over-code
@@ -23,8 +23,8 @@ Executing 'mmap-over-code':
 (mmap-over-code) end
 mmap-over-code: exit(0)
 Execution of 'mmap-over-code' complete.
-Timer: 1344 ticks
-Thread: 0 idle ticks, 1207 kernel ticks, 140 user ticks
+Timer: 1351 ticks
+Thread: 0 idle ticks, 1211 kernel ticks, 143 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 543 reads, 334 writes
 hd1:0: 107 reads, 0 writes

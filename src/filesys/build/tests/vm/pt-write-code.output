@@ -1,5 +1,5 @@
-Copying tests/vm/pt-write-code into /tmp/AMXAXEN6eo.dsk...
-Writing command line to /tmp/nIEG5FwJ9R.dsk...
+Copying tests/vm/pt-write-code into /tmp/qpb6n0UDlk.dsk...
+Writing command line to /tmp/LXUddnvfE7.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put pt-write-code run pt-write-code
@@ -18,10 +18,10 @@ Executing 'pt-write-code':
 (pt-write-code) begin
 pt-write-code: exit(-1)
 Execution of 'pt-write-code' complete.
-Timer: 1266 ticks
-Thread: 0 idle ticks, 1148 kernel ticks, 121 user ticks
+Timer: 1268 ticks
+Thread: 0 idle ticks, 1147 kernel ticks, 124 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 501 reads, 323 writes
+hd0:1: 502 reads, 323 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 930 characters output

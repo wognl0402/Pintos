@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-unmap into /tmp/wweMUyek2w.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/wweMUyek2w.dsk...
-Writing command line to /tmp/_25lRrLypR.dsk...
+Copying tests/vm/mmap-unmap into /tmp/GJfCHLVSJl.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/GJfCHLVSJl.dsk...
+Writing command line to /tmp/CtnArNwNEH.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-unmap put sample.txt run mmap-unmap
@@ -22,8 +22,8 @@ Executing 'mmap-unmap':
 (mmap-unmap) mmap "sample.txt"
 mmap-unmap: exit(-1)
 Execution of 'mmap-unmap' complete.
-Timer: 1368 ticks
-Thread: 0 idle ticks, 1226 kernel ticks, 149 user ticks
+Timer: 1371 ticks
+Thread: 0 idle ticks, 1227 kernel ticks, 151 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 561 reads, 340 writes
 hd1:0: 109 reads, 0 writes

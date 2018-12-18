@@ -1,6 +1,6 @@
-Copying tests/userprog/wait-simple into /tmp/tZga1h_11q.dsk...
-Copying tests/userprog/child-simple into /tmp/tZga1h_11q.dsk...
-Writing command line to /tmp/e6ofPa_bSj.dsk...
+Copying tests/userprog/wait-simple into /tmp/9KHlTrc2aj.dsk...
+Copying tests/userprog/child-simple into /tmp/9KHlTrc2aj.dsk...
+Writing command line to /tmp/PfkIBtjm7A.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put wait-simple put child-simple run wait-simple
@@ -24,8 +24,8 @@ child-simple: exit(81)
 (wait-simple) end
 wait-simple: exit(0)
 Execution of 'wait-simple' complete.
-Timer: 2199 ticks
-Thread: 0 idle ticks, 1959 kernel ticks, 247 user ticks
+Timer: 2208 ticks
+Thread: 0 idle ticks, 1957 kernel ticks, 254 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 997 reads, 634 writes
 hd1:0: 207 reads, 0 writes

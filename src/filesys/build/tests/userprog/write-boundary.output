@@ -1,6 +1,6 @@
-Copying tests/userprog/write-boundary into /tmp/GwGjEpSKNY.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/GwGjEpSKNY.dsk...
-Writing command line to /tmp/s86riGgH7B.dsk...
+Copying tests/userprog/write-boundary into /tmp/_lwavEgVLm.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/_lwavEgVLm.dsk...
+Writing command line to /tmp/tmfcS96_fC.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put write-boundary put sample.txt run write-boundary
@@ -22,8 +22,8 @@ Executing 'write-boundary':
 (write-boundary) end
 write-boundary: exit(0)
 Execution of 'write-boundary' complete.
-Timer: 1390 ticks
-Thread: 0 idle ticks, 1237 kernel ticks, 156 user ticks
+Timer: 1397 ticks
+Thread: 0 idle ticks, 1243 kernel ticks, 157 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 565 reads, 344 writes
 hd1:0: 110 reads, 0 writes

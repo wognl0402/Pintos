@@ -133,7 +133,8 @@ start_process (void *f_name)
     //exit_ (0);	
 	thread_exit ();
   }
-  
+ 
+  thread_current ()->cwd = dir_open_root (); 
   /* Start the user process by simulating a return from an
      interrupt, implemented by intr_exit (in
      threads/intr-stubs.S).  Because intr_exit takes all of its
@@ -259,8 +260,11 @@ process_exit (void)
   //free (&curr->spt);
   //curr->spt= NULL;
   //printf ("spt destruction done\n");
-  cache_destroy ();
 #endif
+  cache_destroy ();
+
+  if (curr->cwd)
+	dir_close (curr->cwd);
   struct thread *parent = get_thread (curr->pa_tid);
   if (parent != NULL){
 	lock_acquire (&parent->ch_lock);

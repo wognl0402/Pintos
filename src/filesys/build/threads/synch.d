@@ -7,4 +7,5 @@ threads/synch.o: ../../threads/synch.c ../../threads/synch.h \
   ../../lib/kernel/list.h ../../lib/kernel/hash.h ../../threads/malloc.h \
   ../../threads/synch.h ../../threads/palloc.h ../../threads/thread.h \
   ../../threads/pte.h ../../threads/vaddr.h ../../threads/loader.h \
-  ../../userprog/pagedir.h ../../filesys/file.h ../../filesys/off_t.h
+  ../../userprog/pagedir.h ../../filesys/file.h ../../filesys/off_t.h \
+  ../../filesys/directory.h ../../devices/disk.h ../../lib/inttypes.h

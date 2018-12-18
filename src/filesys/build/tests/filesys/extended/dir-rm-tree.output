@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/dir-rm-tree into /tmp/JUPzI32pMG.dsk...
-Copying tests/filesys/extended/tar into /tmp/JUPzI32pMG.dsk...
-Writing command line to /tmp/lacKCJDH9y.dsk...
+Copying tests/filesys/extended/dir-rm-tree into /tmp/wN8isqCzY9.dsk...
+Copying tests/filesys/extended/tar into /tmp/wN8isqCzY9.dsk...
+Writing command line to /tmp/PMtcAcQ6_F.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rm-tree put tar run dir-rm-tree
@@ -19,15 +19,20 @@ Putting 'tar' into the file system...
 Executing 'dir-rm-tree':
 (dir-rm-tree) begin
 (dir-rm-tree) creating /0/0/0/0 through /3/2/2/3...
-dir-rm-tree: exit(-1)
+(dir-rm-tree) open "/0/2/0/3"
+(dir-rm-tree) close "/0/2/0/3"
+(dir-rm-tree) removing /0/0/0/0 through /3/2/2/3...
+(dir-rm-tree) open "/3/0/2/0" (must return -1)
+(dir-rm-tree) end
+dir-rm-tree: exit(0)
 Execution of 'dir-rm-tree' complete.
-Timer: 2290 ticks
-Thread: 0 idle ticks, 2159 kernel ticks, 134 user ticks
+Timer: 20313 ticks
+Thread: 0 idle ticks, 2160 kernel ticks, 18156 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1049 reads, 712 writes
+hd0:1: 10400 reads, 2628 writes
 hd1:0: 233 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1015 characters output
+Console: 1197 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

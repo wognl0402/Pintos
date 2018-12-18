@@ -10,6 +10,8 @@
 #include "userprog/pagedir.h"
 #include "vm/page.h"
 #include "filesys/cache.h"
+#include "filesys/directory.h"
+#include "filesys/inode.h"
 
 #define PHYS_TOP ((void *) 0x08048000)
 
@@ -141,7 +143,7 @@ static int syscall_create_ (struct intr_frame *f){
   bool success = false;
   acquire_filesys_lock ();
 
-  success = filesys_create (file, size);
+  success = filesys_create (file, size, false);
   f->eax = success;
 
   release_filesys_lock ();
@@ -171,8 +173,7 @@ static int syscall_open_ (struct intr_frame *f){
   
   release_filesys_lock ();
   //printf("OPENING BY PID[%d]\n", thread_current ()->tid);
-  
-  
+
   
   if (ff==NULL){
 	//printf("NOFILE\n");
@@ -181,6 +182,14 @@ static int syscall_open_ (struct intr_frame *f){
   }
   struct file_desc *fd_ = malloc(sizeof(*fd_));
   fd_->file = ff;
+ 
+  struct inode *i = file_get_inode (fd_->file);
+  if (i != NULL & inode_is_dir (i))
+	  fd_->dir = dir_open (i);
+  else
+	fd_->dir = NULL;
+
+
   if (list_empty (&thread_current ()->fd_list)){
 	  ///sdfsdfsdf
 	  fd_->fd=3;
@@ -500,6 +509,9 @@ static int syscall_write_ (struct intr_frame *f){
 		e=list_next(e)){
 	  temp = list_entry (e, struct file_desc, fd_elem);
 	  if (fd==temp->fd){
+		struct inode *inode = file_get_inode (temp->file);
+		if (inode != NULL && inode_is_dir (inode))
+		  continue;
 		//acquire_filesys_lock ();
 		f->eax=file_write(temp->file, buffer, size);
 		//PANIC("OKAY");
@@ -606,6 +618,8 @@ static int syscall_close_ (struct intr_frame *f){
 	if (temp->fd == fd){
 	  acquire_filesys_lock ();
 	  file_close (temp->file);
+	  if (temp->dir != NULL)
+		dir_close (temp->dir);
 	  release_filesys_lock ();
 	  list_remove(e);
 	  free(temp);
@@ -758,27 +772,79 @@ failing:
 
 
 static int syscall_chdir_ (struct intr_frame *f){
-  return -1;
+  valid_multiple (f->esp, 1);
+  //valid_usrptr (* (uint32_t *) (f->esp+8));
+  //int fd = *(int *) (f->esp+4);
+  char *buffer = * (char **) (f->esp+4);
+  acquire_filesys_lock ();
+  bool ret = filesys_chdir (buffer);
+  release_filesys_lock ();
+
+  f->eax = ret;
+  return 0;
 }
 
 
 static int syscall_mkdir_ (struct intr_frame *f){
-  return -1;
+  valid_multiple (f->esp, 1);
+  //valid_usrptr (* (uint32_t *) (f->esp+8));
+//  int fd = *(int *) (f->esp+4);
+  char *buffer = * (char **) (f->esp+4);
+ 
+  acquire_filesys_lock ();
+  bool ret= filesys_create (buffer, 0, true);
+  release_filesys_lock ();
+  f->eax = ret;
+  return 0;
 }
 
 
 static int syscall_readdir_ (struct intr_frame *f){
-  return -1;
+  valid_multiple (f->esp, 2);
+  int fd = *(int *) (f->esp+4);
+  char *buffer = * (char **) (f->esp+8);
+  //acquire_filesys_lock ();
+
+  bool success = false;
+  struct file_desc *temp = fd_find (fd);
+  if (temp == NULL){
+	f->eax = success;
+    return 0;
+  }
+
+  struct inode *inode = file_get_inode (temp->file);
+  if (inode == NULL || !inode_is_dir (inode)){
+	f->eax = success;
+	return 0;
+  }
+
+  success = dir_readdir (temp->dir, buffer);
+  f->eax = success;
+  return 0;
 }
 
 
 static int syscall_isdir_ (struct intr_frame *f){
-  return -1;
+  valid_multiple (f->esp, 1);
+  //valid_usrptr (* (uint32_t *) (f->esp+8));
+  int fd = *(int *) (f->esp+4);
+  //char *buffer = * (char **) (f->esp+8);
+  
+  struct file_desc *temp = fd_find (fd);
+  bool ret = inode_is_dir (file_get_inode (temp->file));
+  f->eax = ret;
+  return 0;
 }
 
 
 static int syscall_inumber_ (struct intr_frame *f){
-  return -1;
+  valid_multiple (f->esp, 1);
+  int fd = *(int *) (f->esp+4);
+
+  struct file_desc *temp = fd_find (fd);
+  int inum = (int) inode_get_inumber (file_get_inode (temp->file));
+  f->eax = inum;
+  return 0;
 }
 
 

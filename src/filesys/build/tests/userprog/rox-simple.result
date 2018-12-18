@@ -1,5 +1,1 @@
-FAIL
-Kernel panic in run: PANIC at ../../threads/thread.c:308 in thread_current(): assertion `is_thread (t)' failed.
-Call stack: 0xc0120194
-Translation of call stack:
-0xc0120194: (unknown)
+PASS

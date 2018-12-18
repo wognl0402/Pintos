@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include "threads/synch.h"
 #include "vm/page.h"
+#include "filesys/directory.h"
 
 /* States in a thread's life cycle. */
 enum thread_status
@@ -121,7 +122,8 @@ struct thread
 	struct hash spt;
 #endif
 
-    /* Owned by thread.c. */
+	struct dir *cwd;
+	/* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
   };
 struct dead_body
@@ -140,6 +142,7 @@ struct file_desc
 	//char *file;
 	struct file *file;
 	struct list_elem fd_elem;
+    struct dir* dir;
   };
 /* If false (default), use round-robin scheduler.
    If true, use multi-level feedback queue scheduler.

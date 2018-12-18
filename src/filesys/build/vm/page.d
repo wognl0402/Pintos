@@ -6,6 +6,6 @@ vm/page.o: ../../vm/page.c ../../lib/stdio.h ../../lib/debug.h \
   ../../threads/palloc.h ../../threads/thread.h ../../lib/kernel/hash.h \
   ../../threads/synch.h ../../vm/page.h ../../threads/pte.h \
   ../../threads/vaddr.h ../../threads/loader.h ../../userprog/pagedir.h \
-  ../../filesys/file.h ../../filesys/off_t.h ../../vm/frame.h \
-  ../../vm/swap.h ../../lib/kernel/bitmap.h ../../lib/inttypes.h \
-  ../../vm/page.h
+  ../../filesys/file.h ../../filesys/off_t.h ../../filesys/directory.h \
+  ../../devices/disk.h ../../lib/inttypes.h ../../vm/frame.h \
+  ../../vm/swap.h ../../lib/kernel/bitmap.h ../../vm/page.h
