@@ -1,11 +1,11 @@
-Copying tests/userprog/wait-bad-pid into /tmp/ZgJ1Xv1vC9.dsk...
-Writing command line to /tmp/J_n5TOy2VC.dsk...
+Copying tests/userprog/wait-bad-pid into /tmp/ZelctUbe34.dsk...
+Writing command line to /tmp/gh5VNtIKad.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put wait-bad-pid run wait-bad-pid
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -19,13 +19,13 @@ Executing 'wait-bad-pid':
 (wait-bad-pid) end
 wait-bad-pid: exit(0)
 Execution of 'wait-bad-pid' complete.
-Timer: 1019 ticks
-Thread: 0 idle ticks, 899 kernel ticks, 123 user ticks
+Timer: 1059 ticks
+Thread: 30 idle ticks, 906 kernel ticks, 126 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 500 reads, 321 writes
 hd1:0: 103 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 940 characters output
+Console: 941 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...

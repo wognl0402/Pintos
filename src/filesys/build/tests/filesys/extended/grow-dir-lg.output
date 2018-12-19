@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/grow-dir-lg into /tmp/AOvReJhr0m.dsk...
-Copying tests/filesys/extended/tar into /tmp/AOvReJhr0m.dsk...
-Writing command line to /tmp/GjIB1URi6q.dsk...
+Copying tests/filesys/extended/grow-dir-lg into /tmp/7lSTWqLnNL.dsk...
+Copying tests/filesys/extended/tar into /tmp/7lSTWqLnNL.dsk...
+Writing command line to /tmp/NjFuJV2bQL.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-dir-lg put tar run grow-dir-lg
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -72,13 +72,13 @@ Executing 'grow-dir-lg':
 (grow-dir-lg) end
 grow-dir-lg: exit(0)
 Execution of 'grow-dir-lg' complete.
-Timer: 11447 ticks
-Thread: 0 idle ticks, 1851 kernel ticks, 9599 user ticks
+Timer: 11927 ticks
+Thread: 30 idle ticks, 1896 kernel ticks, 10004 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 7883 reads, 1207 writes
 hd1:0: 227 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 3396 characters output
+Console: 3398 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

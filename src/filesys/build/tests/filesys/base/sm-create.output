@@ -1,11 +1,11 @@
-Copying tests/filesys/base/sm-create into /tmp/44b711WalV.dsk...
-Writing command line to /tmp/KkQCOnyU96.dsk...
+Copying tests/filesys/base/sm-create into /tmp/HdS9PBy8dj.dsk...
+Writing command line to /tmp/lak5tiZyP0.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put sm-create run sm-create
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -23,13 +23,13 @@ Executing 'sm-create':
 (sm-create) end
 sm-create: exit(0)
 Execution of 'sm-create' complete.
-Timer: 1204 ticks
-Thread: 0 idle ticks, 923 kernel ticks, 288 user ticks
+Timer: 1254 ticks
+Thread: 30 idle ticks, 933 kernel ticks, 298 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 596 reads, 363 writes
 hd1:0: 107 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1060 characters output
+Console: 1061 characters output
 Keyboard: 0 keys pressed
 Exception: 6 page faults
 Powering off...

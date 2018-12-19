@@ -1,12 +1,12 @@
-Copying tests/userprog/read-bad-ptr into /tmp/VnAraHa9ss.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/VnAraHa9ss.dsk...
-Writing command line to /tmp/2Ybhwu5YL1.dsk...
+Copying tests/userprog/read-bad-ptr into /tmp/4POU3o910m.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/4POU3o910m.dsk...
+Writing command line to /tmp/YYXZWEeU6n.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put read-bad-ptr put sample.txt run read-bad-ptr
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -21,13 +21,13 @@ Executing 'read-bad-ptr':
 (read-bad-ptr) open "sample.txt"
 read-bad-ptr: exit(-1)
 Execution of 'read-bad-ptr' complete.
-Timer: 1099 ticks
-Thread: 0 idle ticks, 969 kernel ticks, 133 user ticks
+Timer: 1142 ticks
+Thread: 30 idle ticks, 978 kernel ticks, 137 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 543 reads, 333 writes
 hd1:0: 106 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1015 characters output
+Console: 1016 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

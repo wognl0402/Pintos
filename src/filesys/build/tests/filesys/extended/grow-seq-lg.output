@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/grow-seq-lg into /tmp/5LzbwvAWYs.dsk...
-Copying tests/filesys/extended/tar into /tmp/5LzbwvAWYs.dsk...
-Writing command line to /tmp/tk14DS4pAR.dsk...
+Copying tests/filesys/extended/grow-seq-lg into /tmp/5e9YLLOflA.dsk...
+Copying tests/filesys/extended/tar into /tmp/5e9YLLOflA.dsk...
+Writing command line to /tmp/6prOyRe2oc.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-seq-lg put tar run grow-seq-lg
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -28,13 +28,13 @@ Executing 'grow-seq-lg':
 (grow-seq-lg) end
 grow-seq-lg: exit(0)
 Execution of 'grow-seq-lg' complete.
-Timer: 4343 ticks
-Thread: 0 idle ticks, 1843 kernel ticks, 2503 user ticks
+Timer: 4503 ticks
+Thread: 30 idle ticks, 1889 kernel ticks, 2587 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 2170 reads, 1271 writes
 hd1:0: 226 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1218 characters output
+Console: 1219 characters output
 Keyboard: 0 keys pressed
 Exception: 22 page faults
 Powering off...

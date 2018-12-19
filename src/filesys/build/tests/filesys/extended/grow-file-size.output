@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/grow-file-size into /tmp/oTTTj15WUv.dsk...
-Copying tests/filesys/extended/tar into /tmp/oTTTj15WUv.dsk...
-Writing command line to /tmp/hCOHYbpFPt.dsk...
+Copying tests/filesys/extended/grow-file-size into /tmp/AsGvjziaCJ.dsk...
+Copying tests/filesys/extended/tar into /tmp/AsGvjziaCJ.dsk...
+Writing command line to /tmp/xiwlE8321S.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-file-size put tar run grow-file-size
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -28,13 +28,13 @@ Executing 'grow-file-size':
 (grow-file-size) end
 grow-file-size: exit(0)
 Execution of 'grow-file-size' complete.
-Timer: 2392 ticks
-Thread: 0 idle ticks, 1854 kernel ticks, 541 user ticks
+Timer: 2488 ticks
+Thread: 30 idle ticks, 1898 kernel ticks, 563 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1265 reads, 832 writes
 hd1:0: 227 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1275 characters output
+Console: 1276 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

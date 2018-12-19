@@ -1,4 +1,4 @@
-TOTAL TESTING SCORE: 95.2%
+TOTAL TESTING SCORE: 99.0%
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -7,15 +7,15 @@ SUMMARY BY TEST SET
 Test Set                                      Pts Max  % Ttl  % Max
 --------------------------------------------- --- --- ------ ------
 tests/filesys/extended/Rubric.functionality    29/ 34  25.6%/ 30.0%
-tests/filesys/extended/Rubric.robustness        5/ 10   7.5%/ 15.0%
-tests/filesys/extended/Rubric.persistence      20/ 23  17.4%/ 20.0%
+tests/filesys/extended/Rubric.robustness        7/ 10  10.5%/ 15.0%
+tests/filesys/extended/Rubric.persistence      21/ 23  18.3%/ 20.0%
 tests/filesys/base/Rubric                      30/ 30  20.0%/ 20.0%
 tests/userprog/Rubric.functionality           108/108  10.0%/ 10.0%
 tests/userprog/Rubric.robustness               86/ 88   4.9%/  5.0%
 tests/vm/Rubric.functionality                  55/ 55   8.0%/  8.0%
 tests/vm/Rubric.robustness                     25/ 28   1.8%/  2.0%
 --------------------------------------------- --- --- ------ ------
-Total                                                  95.2%/110.0%
+Total                                                  99.0%/110.0%
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -59,12 +59,12 @@ Robustness of file system (tests/filesys/extended/Rubric.robustness):
 	     1/ 1 tests/filesys/extended/dir-under-file
 
 	  ** 0/ 3 tests/filesys/extended/dir-rm-cwd
-	  ** 0/ 2 tests/filesys/extended/dir-rm-parent
+	     2/ 2 tests/filesys/extended/dir-rm-parent
 	     1/ 1 tests/filesys/extended/dir-rm-root
 
 	- Section summary.
-	      5/  7 tests passed
-	      5/ 10 points subtotal
+	      6/  7 tests passed
+	      7/ 10 points subtotal
 
 Persistence of file system (tests/filesys/extended/Rubric.persistence):
 	     1/ 1 tests/filesys/extended/dir-empty-name-persistence
@@ -73,7 +73,7 @@ Persistence of file system (tests/filesys/extended/Rubric.persistence):
 	     1/ 1 tests/filesys/extended/dir-open-persistence
 	     1/ 1 tests/filesys/extended/dir-over-file-persistence
 	  ** 0/ 1 tests/filesys/extended/dir-rm-cwd-persistence
-	  ** 0/ 1 tests/filesys/extended/dir-rm-parent-persistence
+	     1/ 1 tests/filesys/extended/dir-rm-parent-persistence
 	     1/ 1 tests/filesys/extended/dir-rm-root-persistence
 	     1/ 1 tests/filesys/extended/dir-rm-tree-persistence
 	     1/ 1 tests/filesys/extended/dir-rmdir-persistence
@@ -92,8 +92,8 @@ Persistence of file system (tests/filesys/extended/Rubric.persistence):
 	     1/ 1 tests/filesys/extended/syn-rw-persistence
 
 	- Section summary.
-	     20/ 23 tests passed
-	     20/ 23 points subtotal
+	     21/ 23 tests passed
+	     21/ 23 points subtotal
 
 Functionality of base file system (tests/filesys/base/Rubric):
 	- Test basic support for small files.
@@ -299,9 +299,9 @@ run: open ".": FAILED
 
 OUTPUT FROM tests/filesys/extended/dir-vine:
 
-Copying tests/filesys/extended/dir-vine into /tmp/YOx8vK2EeX.dsk...
-Copying tests/filesys/extended/tar into /tmp/YOx8vK2EeX.dsk...
-Writing command line to /tmp/3xkSVHQP65.dsk...
+Copying tests/filesys/extended/dir-vine into /tmp/aryUyWCnuK.dsk...
+Copying tests/filesys/extended/tar into /tmp/aryUyWCnuK.dsk...
+Writing command line to /tmp/C5zbo5rjDO.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-vine put tar run dir-vine
@@ -323,10 +323,10 @@ Executing 'dir-vine':
 (dir-vine) open ".": FAILED
 dir-vine: exit(1)
 Execution of 'dir-vine' complete.
-Timer: 2396 ticks
-Thread: 0 idle ticks, 2129 kernel ticks, 274 user ticks
+Timer: 2121 ticks
+Thread: 0 idle ticks, 1871 kernel ticks, 257 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1099 reads, 726 writes
+hd0:1: 1109 reads, 731 writes
 hd1:0: 230 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 1029 characters output
@@ -338,13 +338,13 @@ Powering off...
 
 DETAILS OF tests/filesys/extended/dir-rm-cwd FAILURE:
 
-run: create "x" (must fail): FAILED
+run: open ".": FAILED
 
 OUTPUT FROM tests/filesys/extended/dir-rm-cwd:
 
-Copying tests/filesys/extended/dir-rm-cwd into /tmp/elhQnl7w24.dsk...
-Copying tests/filesys/extended/tar into /tmp/elhQnl7w24.dsk...
-Writing command line to /tmp/LIiGXZmW1N.dsk...
+Copying tests/filesys/extended/dir-rm-cwd into /tmp/WaIXupJGGc.dsk...
+Copying tests/filesys/extended/tar into /tmp/WaIXupJGGc.dsk...
+Writing command line to /tmp/cqhKZ1jwFg.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rm-cwd put tar run dir-rm-cwd
@@ -369,70 +369,24 @@ Executing 'dir-rm-cwd':
 (dir-rm-cwd) "/" and "/a" must have different inumbers
 (dir-rm-cwd) chdir "a"
 (dir-rm-cwd) try to remove "/a"
-(dir-rm-cwd) remove successful
-(dir-rm-cwd) open "/a" (must fail)
-(dir-rm-cwd) open "." (must fail)
-(dir-rm-cwd) open ".." (must fail)
-(dir-rm-cwd) create "x" (must fail)
-(dir-rm-cwd) create "x" (must fail): FAILED
+(dir-rm-cwd) remove failed
+(dir-rm-cwd) try to remove "../a" (must fail)
+(dir-rm-cwd) try to remove ".././a" (must fail)
+(dir-rm-cwd) try to remove "/./a" (must fail)
+(dir-rm-cwd) open "/a"
+(dir-rm-cwd) open "."
+(dir-rm-cwd) open ".": FAILED
 dir-rm-cwd: exit(1)
 Execution of 'dir-rm-cwd' complete.
-Timer: 2437 ticks
-Thread: 0 idle ticks, 2130 kernel ticks, 314 user ticks
+Timer: 2129 ticks
+Thread: 0 idle ticks, 1874 kernel ticks, 262 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1108 reads, 722 writes
+hd0:1: 1084 reads, 711 writes
 hd1:0: 230 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1382 characters output
+Console: 1409 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
-Powering off...
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-DETAILS OF tests/filesys/extended/dir-rm-parent FAILURE:
-
-run: remove "/a" (must fail): FAILED
-
-OUTPUT FROM tests/filesys/extended/dir-rm-parent:
-
-Copying tests/filesys/extended/dir-rm-parent into /tmp/KzvIPCMxdV.dsk...
-Copying tests/filesys/extended/tar into /tmp/KzvIPCMxdV.dsk...
-Writing command line to /tmp/1Z9U92IBrD.dsk...
-warning: can't find squish-pty, so terminal input will fail
-bochs -q
-Kernel command line: -q -f put dir-rm-parent put tar run dir-rm-parent
-Pintos booting with 4,096 kB RAM...
-372 pages available in kernel pool.
-372 pages available in user pool.
-Calibrating timer...  204,600 loops/s.
-hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
-hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
-hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
-hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
-Formatting file system...done.
-Boot complete.
-Putting 'dir-rm-parent' into the file system...
-Putting 'tar' into the file system...
-Executing 'dir-rm-parent':
-(dir-rm-parent) begin
-(dir-rm-parent) mkdir "a"
-(dir-rm-parent) chdir "a"
-(dir-rm-parent) mkdir "b"
-(dir-rm-parent) chdir "b"
-(dir-rm-parent) remove "/a" (must fail)
-(dir-rm-parent) remove "/a" (must fail): FAILED
-dir-rm-parent: exit(1)
-Execution of 'dir-rm-parent' complete.
-Timer: 2333 ticks
-Thread: 0 idle ticks, 2088 kernel ticks, 248 user ticks
-hd0:0: 0 reads, 0 writes
-hd0:1: 1074 reads, 708 writes
-hd1:0: 226 reads, 0 writes
-hd1:1: 0 reads, 0 writes
-Console: 1168 characters output
-Keyboard: 0 keys pressed
-Exception: 5 page faults
 Powering off...
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
@@ -443,7 +397,7 @@ Prerequisite test tests/filesys/extended/dir-rm-cwd failed.
 
 OUTPUT FROM tests/filesys/extended/dir-rm-cwd-persistence:
 
-Writing command line to /tmp/vXkliXPqvZ.dsk...
+Writing command line to /tmp/97BIQVzIvF.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q run 'tar fs.tar /' get fs.tar
@@ -460,54 +414,17 @@ Executing 'tar fs.tar /':
 tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Getting 'fs.tar' from the file system...
-Timer: 6082 ticks
-Thread: 0 idle ticks, 859 kernel ticks, 5226 user ticks
+Timer: 4402 ticks
+Thread: 0 idle ticks, 864 kernel ticks, 3541 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 2534 reads, 1046 writes
-hd1:0: 0 reads, 233 writes
+hd0:1: 2555 reads, 1052 writes
+hd1:0: 0 reads, 234 writes
 hd1:1: 0 reads, 0 writes
 Console: 848 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...
-Copying tests/filesys/extended/dir-rm-cwd.tar out of /tmp/6hbHtQsZXb.dsk...
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-DETAILS OF tests/filesys/extended/dir-rm-parent-persistence FAILURE:
-
-Prerequisite test tests/filesys/extended/dir-rm-parent failed.
-
-OUTPUT FROM tests/filesys/extended/dir-rm-parent-persistence:
-
-Writing command line to /tmp/MCbCDEzfA_.dsk...
-warning: can't find squish-pty, so terminal input will fail
-bochs -q
-Kernel command line: -q run 'tar fs.tar /' get fs.tar
-Pintos booting with 4,096 kB RAM...
-372 pages available in kernel pool.
-372 pages available in user pool.
-Calibrating timer...  204,600 loops/s.
-hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
-hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
-hd1:0: detected 3,024 sector (1 MB) disk, model "Generic 1234", serial "BXHD00021"
-hd1:1: detected 8,064 sector (3 MB) disk, model "Generic 1234", serial "BXHD00022"
-Boot complete.
-Executing 'tar fs.tar /':
-tar: exit(0)
-Execution of 'tar fs.tar /' complete.
-Getting 'fs.tar' from the file system...
-Timer: 5969 ticks
-Thread: 0 idle ticks, 848 kernel ticks, 5124 user ticks
-hd0:0: 0 reads, 0 writes
-hd0:1: 2486 reads, 1026 writes
-hd1:0: 0 reads, 229 writes
-hd1:1: 0 reads, 0 writes
-Console: 848 characters output
-Keyboard: 0 keys pressed
-Exception: 4 page faults
-Powering off...
-Copying tests/filesys/extended/dir-rm-parent.tar out of /tmp/TfVSX03LWg.dsk...
+Copying tests/filesys/extended/dir-rm-cwd.tar out of /tmp/uU1ASwvj2x.dsk...
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -517,7 +434,7 @@ Prerequisite test tests/filesys/extended/dir-vine failed.
 
 OUTPUT FROM tests/filesys/extended/dir-vine-persistence:
 
-Writing command line to /tmp/qjbyzAAifK.dsk...
+Writing command line to /tmp/1V9Nsl5zDL.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q run 'tar fs.tar /' get fs.tar
@@ -534,17 +451,17 @@ Executing 'tar fs.tar /':
 tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Getting 'fs.tar' from the file system...
-Timer: 6462 ticks
-Thread: 0 idle ticks, 1167 kernel ticks, 5298 user ticks
+Timer: 4498 ticks
+Thread: 0 idle ticks, 874 kernel ticks, 3627 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 2602 reads, 1066 writes
+hd0:1: 2604 reads, 1067 writes
 hd1:0: 0 reads, 237 writes
 hd1:1: 0 reads, 0 writes
-Console: 849 characters output
+Console: 848 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...
-Copying tests/filesys/extended/dir-vine.tar out of /tmp/HPdbbfr0Ks.dsk...
+Copying tests/filesys/extended/dir-vine.tar out of /tmp/LHVoGkb2wD.dsk...
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
@@ -554,8 +471,8 @@ run: open() returned 3 instead of -1: FAILED
 
 OUTPUT FROM tests/userprog/open-empty:
 
-Copying tests/userprog/open-empty into /tmp/JMCD_Puimy.dsk...
-Writing command line to /tmp/8J7oFhi2gP.dsk...
+Copying tests/userprog/open-empty into /tmp/CSWhEus33Q.dsk...
+Writing command line to /tmp/8Eoozl7fwA.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put open-empty run open-empty
@@ -575,13 +492,13 @@ Executing 'open-empty':
 (open-empty) open() returned 3 instead of -1: FAILED
 open-empty: exit(1)
 Execution of 'open-empty' complete.
-Timer: 1270 ticks
-Thread: 0 idle ticks, 1145 kernel ticks, 132 user ticks
+Timer: 1028 ticks
+Thread: 0 idle ticks, 905 kernel ticks, 130 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 502 reads, 323 writes
+hd0:1: 504 reads, 324 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 961 characters output
+Console: 960 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...
@@ -591,15 +508,15 @@ Powering off...
 DETAILS OF tests/vm/pt-write-code2 FAILURE:
 
 Kernel panic in run: PANIC at ../../threads/synch.c:238 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
-Call stack: 0xc0121d18
+Call stack: 0xc0120d18
 Translation of call stack:
-0xc0121d18: (unknown)
+0xc0120d18: (unknown)
 
 OUTPUT FROM tests/vm/pt-write-code2:
 
-Copying tests/vm/pt-write-code2 into /tmp/oOwK3DPXoR.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/oOwK3DPXoR.dsk...
-Writing command line to /tmp/Pxm6pamNOy.dsk...
+Copying tests/vm/pt-write-code2 into /tmp/1qoUdORfTx.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/1qoUdORfTx.dsk...
+Writing command line to /tmp/Q5KVaWF6rK.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put pt-write-code2 put sample.txt run pt-write-code2
@@ -620,6 +537,6 @@ Executing 'pt-write-code2':
 (pt-write-code2) open "sample.txt"
 pt-write-code2: exit(-1)
 Kernel PANIC at ../../threads/synch.c:238 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
-Call stack: 0xc0121d18pt-write-code2: exit(-1)
+Call stack: 0xc0120d18pt-write-code2: exit(-1)
 Kernel PANIC recursion at ../../threads/synch.c:238 in lock_acquire().
 Simulation terminated due to kernel panic.

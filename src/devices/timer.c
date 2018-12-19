@@ -20,6 +20,8 @@
 /* Number of timer ticks since OS booted. */
 static int64_t ticks;
 
+static struct list block_list;
+
 /* Number of loops per timer tick.
    Initialized by timer_calibrate(). */
 static unsigned loops_per_tick;
@@ -29,6 +31,12 @@ static bool too_many_loops (unsigned loops);
 static void busy_wait (int64_t loops);
 static void real_time_sleep (int64_t num, int32_t denom);
 
+bool less_tick_func (const struct list_elem *a,
+	const struct list_elem *b,
+	void *aux){
+  return list_entry (a, struct thread, elem)->left_ticks <
+	list_entry (b, struct thread, elem)->left_ticks;
+}
 /* Sets up the 8254 Programmable Interval Timer (PIT) to
    interrupt PIT_FREQ times per second, and registers the
    corresponding interrupt. */
@@ -44,6 +52,7 @@ timer_init (void)
   outb (0x40, count >> 8);
 
   intr_register_ext (0x20, timer_interrupt, "8254 Timer");
+  list_init (&block_list);
 }
 
 /* Calibrates loops_per_tick, used to implement brief delays. */
@@ -96,12 +105,18 @@ timer_elapsed (int64_t then)
 void
 timer_sleep (int64_t ticks) 
 {
-  int64_t start = timer_ticks ();
 
   ASSERT (intr_get_level () == INTR_ON);
-  while (timer_elapsed (start) < ticks) 
-    thread_yield ();
+
+  enum intr_level old_level = intr_disable ();
+  int64_t start = timer_ticks ();
+  thread_current ()->left_ticks = start+ticks;
+  list_insert_ordered (&block_list, &thread_current ()->elem, less_tick_func, NULL);
+  thread_block ();
+  intr_set_level (old_level);
+
 }
+
 
 /* Suspends execution for approximately MS milliseconds. */
 void
@@ -137,6 +152,19 @@ timer_interrupt (struct intr_frame *args UNUSED)
 {
   ticks++;
   thread_tick ();
+
+  struct list_elem *e;
+  for (e = list_begin (&block_list);
+	  e != list_end (&block_list);
+	  ){
+	struct thread *t = list_entry (e, struct thread, elem);
+	if (ticks < t->left_ticks)
+	  break;
+	list_remove(e);
+	thread_unblock (t);
+	e = list_begin (&block_list);
+  }
+
 }
 
 /* Returns true if LOOPS iterations waits for more than one timer

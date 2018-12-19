@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/grow-sparse into /tmp/oaMbi8cIqu.dsk...
-Copying tests/filesys/extended/tar into /tmp/oaMbi8cIqu.dsk...
-Writing command line to /tmp/G6_nEBiTUZ.dsk...
+Copying tests/filesys/extended/grow-sparse into /tmp/oFI6TWQYKI.dsk...
+Copying tests/filesys/extended/tar into /tmp/oFI6TWQYKI.dsk...
+Writing command line to /tmp/z5VEfQ2Bdz.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-sparse put tar run grow-sparse
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -29,13 +29,13 @@ Executing 'grow-sparse':
 (grow-sparse) end
 grow-sparse: exit(0)
 Execution of 'grow-sparse' complete.
-Timer: 3468 ticks
-Thread: 0 idle ticks, 1845 kernel ticks, 1626 user ticks
+Timer: 3595 ticks
+Thread: 30 idle ticks, 1888 kernel ticks, 1680 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1722 reads, 1032 writes
 hd1:0: 226 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1260 characters output
+Console: 1261 characters output
 Keyboard: 0 keys pressed
 Exception: 23 page faults
 Powering off...

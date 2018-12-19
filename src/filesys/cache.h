@@ -29,6 +29,7 @@ struct cache_entry *cache_lookup (disk_sector_t sector);
 struct cache_entry *cache_return (disk_sector_t sector, bool write);
 struct cache_entry *cache_evict_SC (disk_sector_t sector, bool write);
 
+void write_back (void * UNUSED);
 /*
 struct cache_entry *cache_lookup (disk_sector_t sector);
 struct cache_entry *cache_return (disk_sector_t sector, bool write);

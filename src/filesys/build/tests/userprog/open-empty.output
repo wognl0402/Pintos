@@ -1,11 +1,11 @@
-Copying tests/userprog/open-empty into /tmp/Sj76JEUXef.dsk...
-Writing command line to /tmp/IOW4DDnZnI.dsk...
+Copying tests/userprog/open-empty into /tmp/WLn4i2vLUn.dsk...
+Writing command line to /tmp/qJssGbtU6K.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put open-empty run open-empty
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -19,13 +19,13 @@ Executing 'open-empty':
 (open-empty) open() returned 3 instead of -1: FAILED
 open-empty: exit(1)
 Execution of 'open-empty' complete.
-Timer: 1028 ticks
-Thread: 0 idle ticks, 905 kernel ticks, 130 user ticks
+Timer: 1069 ticks
+Thread: 30 idle ticks, 911 kernel ticks, 135 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 504 reads, 324 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 960 characters output
+Console: 961 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

@@ -2,11 +2,13 @@
 #include "filesys/cache.h"
 #include "filesys/filesys.h"
 #include "threads/malloc.h"
+#include "threads/thread.h"
 
 void cache_init (void){
   list_init (&cache);
   lock_init (&cache_lock);
   cache_size = 0;
+  thread_create ("writeback", 0, write_back, NULL);
 }
 
 void cache_destroy (void){
@@ -120,3 +122,10 @@ struct cache_entry *cache_evict_SC (disk_sector_t sector, bool write){
   return c;
 }
 
+void write_back (void *aux UNUSED){
+  while (true)
+  {
+	timer_sleep (1000);
+	cache_destroy ();
+  }
+}

@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/dir-rmdir into /tmp/l2TSy60ZXH.dsk...
-Copying tests/filesys/extended/tar into /tmp/l2TSy60ZXH.dsk...
-Writing command line to /tmp/uwnPPTJBjV.dsk...
+Copying tests/filesys/extended/dir-rmdir into /tmp/T7a2Nuxf4h.dsk...
+Copying tests/filesys/extended/tar into /tmp/T7a2Nuxf4h.dsk...
+Writing command line to /tmp/qg1sGoDWtL.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rmdir put tar run dir-rmdir
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -24,13 +24,13 @@ Executing 'dir-rmdir':
 (dir-rmdir) end
 dir-rmdir: exit(0)
 Execution of 'dir-rmdir' complete.
-Timer: 2046 ticks
-Thread: 0 idle ticks, 1836 kernel ticks, 217 user ticks
+Timer: 2126 ticks
+Thread: 30 idle ticks, 1879 kernel ticks, 224 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1073 reads, 699 writes
 hd1:0: 225 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1050 characters output
+Console: 1051 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

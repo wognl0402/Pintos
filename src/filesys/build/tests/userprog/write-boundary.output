@@ -1,12 +1,12 @@
-Copying tests/userprog/write-boundary into /tmp/okGht_8gPQ.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/okGht_8gPQ.dsk...
-Writing command line to /tmp/0BT7HLSgpa.dsk...
+Copying tests/userprog/write-boundary into /tmp/yi33KSHEH7.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/yi33KSHEH7.dsk...
+Writing command line to /tmp/NlsleIaqiT.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put write-boundary put sample.txt run write-boundary
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -22,13 +22,13 @@ Executing 'write-boundary':
 (write-boundary) end
 write-boundary: exit(0)
 Execution of 'write-boundary' complete.
-Timer: 1151 ticks
-Thread: 0 idle ticks, 995 kernel ticks, 159 user ticks
+Timer: 1196 ticks
+Thread: 30 idle ticks, 1005 kernel ticks, 164 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 569 reads, 346 writes
 hd1:0: 110 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1051 characters output
+Console: 1053 characters output
 Keyboard: 0 keys pressed
 Exception: 7 page faults
 Powering off...

@@ -1,11 +1,11 @@
-Copying tests/userprog/close-stdin into /tmp/8VHJm0fbgB.dsk...
-Writing command line to /tmp/EBp7ZnrGnC.dsk...
+Copying tests/userprog/close-stdin into /tmp/lBugSWW2s5.dsk...
+Writing command line to /tmp/GHf1n7X1u8.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put close-stdin run close-stdin
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -18,13 +18,13 @@ Executing 'close-stdin':
 (close-stdin) begin
 close-stdin: exit(-1)
 Execution of 'close-stdin' complete.
-Timer: 1014 ticks
-Thread: 0 idle ticks, 898 kernel ticks, 119 user ticks
+Timer: 1055 ticks
+Thread: 30 idle ticks, 906 kernel ticks, 122 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 500 reads, 321 writes
 hd1:0: 103 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 915 characters output
+Console: 916 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...

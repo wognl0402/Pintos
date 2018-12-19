@@ -1,11 +1,11 @@
-Copying tests/userprog/rox-simple into /tmp/oVVf3ipyBV.dsk...
-Writing command line to /tmp/vfrdoRruYL.dsk...
+Copying tests/userprog/rox-simple into /tmp/IrJ98zoJRb.dsk...
+Writing command line to /tmp/EEdPiLUgNX.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put rox-simple run rox-simple
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -22,13 +22,13 @@ Executing 'rox-simple':
 (rox-simple) end
 rox-simple: exit(0)
 Execution of 'rox-simple' complete.
-Timer: 1040 ticks
-Thread: 0 idle ticks, 903 kernel ticks, 144 user ticks
+Timer: 1081 ticks
+Thread: 30 idle ticks, 909 kernel ticks, 149 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 506 reads, 324 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1025 characters output
+Console: 1026 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

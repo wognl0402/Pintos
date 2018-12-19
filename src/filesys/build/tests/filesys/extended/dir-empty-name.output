@@ -1,12 +1,12 @@
-Copying tests/filesys/extended/dir-empty-name into /tmp/XpRvyaaqrY.dsk...
-Copying tests/filesys/extended/tar into /tmp/XpRvyaaqrY.dsk...
-Writing command line to /tmp/aHrkjqQIFc.dsk...
+Copying tests/filesys/extended/dir-empty-name into /tmp/xvmbVYghzY.dsk...
+Copying tests/filesys/extended/tar into /tmp/xvmbVYghzY.dsk...
+Writing command line to /tmp/fb_MKXF8aH.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-empty-name put tar run dir-empty-name
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -22,13 +22,13 @@ Executing 'dir-empty-name':
 (dir-empty-name) end
 dir-empty-name: exit(0)
 Execution of 'dir-empty-name' complete.
-Timer: 1985 ticks
-Thread: 0 idle ticks, 1836 kernel ticks, 152 user ticks
+Timer: 2064 ticks
+Thread: 30 idle ticks, 1881 kernel ticks, 156 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1024 reads, 695 writes
 hd1:0: 225 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1050 characters output
+Console: 1051 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

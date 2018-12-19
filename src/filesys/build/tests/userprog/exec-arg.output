@@ -1,12 +1,12 @@
-Copying tests/userprog/exec-arg into /tmp/PMrsqA2Y26.dsk...
-Copying tests/userprog/child-args into /tmp/PMrsqA2Y26.dsk...
-Writing command line to /tmp/DwrNXSi0Q8.dsk...
+Copying tests/userprog/exec-arg into /tmp/0IDrJ2rqQ3.dsk...
+Copying tests/userprog/child-args into /tmp/0IDrJ2rqQ3.dsk...
+Writing command line to /tmp/vsF2qi3Rjk.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put exec-arg put child-args run exec-arg
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -28,13 +28,13 @@ child-args: exit(0)
 (exec-arg) end
 exec-arg: exit(0)
 Execution of 'exec-arg' complete.
-Timer: 1977 ticks
-Thread: 0 idle ticks, 1720 kernel ticks, 264 user ticks
+Timer: 2049 ticks
+Thread: 30 idle ticks, 1751 kernel ticks, 271 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 991 reads, 633 writes
 hd1:0: 206 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1109 characters output
+Console: 1110 characters output
 Keyboard: 0 keys pressed
 Exception: 10 page faults
 Powering off...

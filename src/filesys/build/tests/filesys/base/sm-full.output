@@ -1,11 +1,11 @@
-Copying tests/filesys/base/sm-full into /tmp/Xngm70uAct.dsk...
-Writing command line to /tmp/ydna0CrX8W.dsk...
+Copying tests/filesys/base/sm-full into /tmp/yIHI1yLuMP.dsk...
+Writing command line to /tmp/2ImSt2pv7o.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put sm-full run sm-full
 Pintos booting with 4,096 kB RAM...
 372 pages available in kernel pool.
-372 pages available in user pool.
+371 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
 hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
@@ -26,13 +26,13 @@ Executing 'sm-full':
 (sm-full) end
 sm-full: exit(0)
 Execution of 'sm-full' complete.
-Timer: 1283 ticks
-Thread: 0 idle ticks, 932 kernel ticks, 358 user ticks
+Timer: 1332 ticks
+Thread: 30 idle ticks, 939 kernel ticks, 370 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 628 reads, 378 writes
 hd1:0: 108 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1094 characters output
+Console: 1095 characters output
 Keyboard: 0 keys pressed
 Exception: 6 page faults
 Powering off...
