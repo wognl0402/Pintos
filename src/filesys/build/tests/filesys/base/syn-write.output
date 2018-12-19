@@ -1,6 +1,6 @@
-Copying tests/filesys/base/syn-write into /tmp/p7Gsyqkdhz.dsk...
-Copying tests/filesys/base/child-syn-wrt into /tmp/p7Gsyqkdhz.dsk...
-Writing command line to /tmp/PHMJRN2xb_.dsk...
+Copying tests/filesys/base/syn-write into /tmp/yvQw3ilPPG.dsk...
+Copying tests/filesys/base/child-syn-wrt into /tmp/yvQw3ilPPG.dsk...
+Writing command line to /tmp/7b_B5rGGVp.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put syn-write put child-syn-wrt run syn-write
@@ -24,14 +24,14 @@ Executing 'syn-write':
 (syn-write) exec child 3 of 10: "child-syn-wrt 2"
 (syn-write) exec child 4 of 10: "child-syn-wrt 3"
 child-syn-wrt: exit(0)
-(syn-write) exec child 5 of 10: "child-syn-wrt 4"
 child-syn-wrt: exit(1)
-(syn-write) exec child 6 of 10: "child-syn-wrt 5"
+(syn-write) exec child 5 of 10: "child-syn-wrt 4"
 child-syn-wrt: exit(2)
+(syn-write) exec child 6 of 10: "child-syn-wrt 5"
+child-syn-wrt: exit(3)
 (syn-write) exec child 7 of 10: "child-syn-wrt 6"
 child-syn-wrt: exit(4)
 (syn-write) exec child 8 of 10: "child-syn-wrt 7"
-child-syn-wrt: exit(3)
 child-syn-wrt: exit(5)
 (syn-write) exec child 9 of 10: "child-syn-wrt 8"
 child-syn-wrt: exit(6)
@@ -54,10 +54,10 @@ child-syn-wrt: exit(9)
 (syn-write) end
 syn-write: exit(0)
 Execution of 'syn-write' complete.
-Timer: 4378 ticks
-Thread: 0 idle ticks, 2350 kernel ticks, 2035 user ticks
+Timer: 3990 ticks
+Thread: 0 idle ticks, 2101 kernel ticks, 1896 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1675 reads, 732 writes
+hd0:1: 1696 reads, 735 writes
 hd1:0: 228 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 2384 characters output

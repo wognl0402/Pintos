@@ -25,10 +25,13 @@ struct inode *dir_get_inode (struct dir *);
 /* Reading and writing. */
 bool dir_lookup (const struct dir *, const char *name, struct inode **);
 bool dir_add (struct dir *, const char *name, disk_sector_t);
+//bool add_parent (struct dir *, disk_sector_t);
 bool dir_remove (struct dir *, const char *name);
 bool dir_readdir (struct dir *, char name[NAME_MAX + 1]);
 
+bool dir_is_root (struct dir *);
+bool dir_is_empty (struct inode *);
 void get_dir (const char *, char *);
 void get_filename (const char *, char *);
-
+bool get_parent (struct dir *dir, struct inode **inode);
 #endif /* filesys/directory.h */

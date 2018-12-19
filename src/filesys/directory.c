@@ -6,6 +6,7 @@
 #include "filesys/inode.h"
 #include "threads/malloc.h"
 #include "threads/thread.h"
+//#include "filesys/disk.h"
 /* A directory. */
 struct dir 
   {
@@ -78,7 +79,16 @@ dir_open_path (const char *path){
   for (token = strtok_r (s, "/", &save);
 	  token != NULL;
 	  token = strtok_r (NULL, "/", &save)){
+	if (strcmp (token, ".") ==0)
+	  continue;
 	struct inode *inode = NULL;
+	if (strcmp(token, "..") == 0){
+	  if (!get_parent (d, &inode))
+		return NULL;
+	//  printf("okay\n");
+	  continue;
+	}
+	
 	if (!dir_lookup (d, token, &inode)){
 	  dir_close (d);
 	  return NULL;
@@ -195,6 +205,8 @@ dir_add (struct dir *dir, const char *name, disk_sector_t inode_sector)
   if (lookup (dir, name, NULL, NULL))
     goto done;
 
+  if (!add_parent (inode_get_inumber (dir_get_inode (dir)), inode_sector))
+	goto done;
   /* Set OFS to offset of free slot.
      If there are no free slots, then it will be set to the
      current end-of-file.
@@ -216,8 +228,26 @@ dir_add (struct dir *dir, const char *name, disk_sector_t inode_sector)
  done:
   return success;
 }
+/*
+bool add_parent (struct dir *dir, disk_sector_t child){
+  disk_sector_t parent = inode_get_inumber (dir_get_inode (dir));
 
-/* Removes any entry for NAME in DIR.
+  struct inode *inode = inode_open (child);
+  if (inode == NULL)
+	return false;
+  
+  inode->parent = parent;
+
+  struct inode_disk *id = calloc (1, sizeof *id);
+  
+  disk_read (filesys_disk, inode->parent, id);
+  id->parent = parent;
+  disk_write (filesys_disk, inode->parent, id);
+  free (id);
+  inode_close (inode);
+  return true;
+}*/
+  /* Removes any entry for NAME in DIR.
    Returns true if successful, false on failure,
    which occurs only if there is no file with the given NAME. */
 bool
@@ -239,7 +269,14 @@ dir_remove (struct dir *dir, const char *name)
   inode = inode_open (e.inode_sector);
   if (inode == NULL)
     goto done;
-
+//inode_is_dir (inode);
+  if (inode_is_dir (inode) && inode_get_open_cnt (inode) >1)
+	goto done;
+  
+  
+  if (inode_is_dir (inode) && !dir_is_empty (inode))
+	goto done;
+  
   /* Erase directory entry. */
   e.in_use = false;
   if (inode_write_at (dir->inode, &e, sizeof e, ofs) != sizeof e) 
@@ -274,6 +311,27 @@ dir_readdir (struct dir *dir, char name[NAME_MAX + 1])
   return false;
 }
 
+bool dir_is_root (struct dir *dir){
+  if (dir == NULL)
+	return false;
+  if (inode_get_inumber (dir_get_inode(dir)) == ROOT_DIR_SECTOR)
+	return true;
+
+  return false;
+}
+
+bool dir_is_empty (struct inode *inode){
+  struct dir_entry e;
+  size_t ofs;
+
+  for (ofs = 0; inode_read_at (inode, &e, sizeof e, ofs) == sizeof e;
+	  ofs += sizeof e){
+	if (e.in_use)
+	  return false;
+  }
+  return true;
+}
+
 void get_filename (const char *path, char *filename){
   int l = strlen(path);
   char *fn = malloc (l+1);
@@ -286,7 +344,11 @@ void get_filename (const char *path, char *filename){
   //printf("### %s ###\n", fn);
     temp = token;
   }
-//printf ("@@@ %s @@@\n", token);
+  /*
+  if (strcmp(temp, ".") ==0)
+	*temp = "";
+  */
+  //printf ("@@@ %s @@@\n", token);
   strlcpy (filename, temp, (strlen(temp)+1));
   free (fn);
 }
@@ -317,8 +379,24 @@ void get_dir (const char *path, char *directory){
 	
 	temp = token;
   }
+ /*
+  if (strcmp (temp, ".")== 0){
+   memcpy (dir, temp, 1);   
+//dir = ".";
+   dir +=1;
+  }
+  */
 
   if(dir) *dir = '\0';
   free (fn);
 }
 
+bool get_parent (struct dir *dir, struct inode **inode){
+  struct inode *temp = dir_get_inode (dir);
+  disk_sector_t parent = get_parent_sector (temp);
+  *inode = inode_open (parent);
+  if (*inode == NULL)
+	return false;
+
+  return true;
+}

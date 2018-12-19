@@ -79,7 +79,7 @@ pass tests/filesys/extended/dir-mkdir
 pass tests/filesys/extended/dir-open
 pass tests/filesys/extended/dir-over-file
 FAIL tests/filesys/extended/dir-rm-cwd
-FAIL tests/filesys/extended/dir-rm-parent
+pass tests/filesys/extended/dir-rm-parent
 pass tests/filesys/extended/dir-rm-root
 pass tests/filesys/extended/dir-rm-tree
 pass tests/filesys/extended/dir-rmdir
@@ -136,7 +136,7 @@ pass tests/filesys/extended/dir-mkdir-persistence
 pass tests/filesys/extended/dir-open-persistence
 pass tests/filesys/extended/dir-over-file-persistence
 FAIL tests/filesys/extended/dir-rm-cwd-persistence
-FAIL tests/filesys/extended/dir-rm-parent-persistence
+pass tests/filesys/extended/dir-rm-parent-persistence
 pass tests/filesys/extended/dir-rm-root-persistence
 pass tests/filesys/extended/dir-rm-tree-persistence
 pass tests/filesys/extended/dir-rmdir-persistence

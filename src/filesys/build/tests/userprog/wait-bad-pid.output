@@ -1,5 +1,5 @@
-Copying tests/userprog/wait-bad-pid into /tmp/3f18_A6BwU.dsk...
-Writing command line to /tmp/dslcArXxuK.dsk...
+Copying tests/userprog/wait-bad-pid into /tmp/ZgJ1Xv1vC9.dsk...
+Writing command line to /tmp/J_n5TOy2VC.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put wait-bad-pid run wait-bad-pid
@@ -19,13 +19,13 @@ Executing 'wait-bad-pid':
 (wait-bad-pid) end
 wait-bad-pid: exit(0)
 Execution of 'wait-bad-pid' complete.
-Timer: 1258 ticks
-Thread: 0 idle ticks, 1137 kernel ticks, 124 user ticks
+Timer: 1019 ticks
+Thread: 0 idle ticks, 899 kernel ticks, 123 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 498 reads, 320 writes
+hd0:1: 500 reads, 321 writes
 hd1:0: 103 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 941 characters output
+Console: 940 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...

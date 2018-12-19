@@ -1,6 +1,6 @@
-Copying tests/userprog/read-zero into /tmp/Cb_oNlZZSa.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/Cb_oNlZZSa.dsk...
-Writing command line to /tmp/y103Urarvg.dsk...
+Copying tests/userprog/read-zero into /tmp/PQQ3zLraiv.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/PQQ3zLraiv.dsk...
+Writing command line to /tmp/K09QPd5fei.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put read-zero put sample.txt run read-zero
@@ -22,13 +22,13 @@ Executing 'read-zero':
 (read-zero) end
 read-zero: exit(0)
 Execution of 'read-zero' complete.
-Timer: 1330 ticks
-Thread: 0 idle ticks, 1203 kernel ticks, 134 user ticks
+Timer: 1094 ticks
+Thread: 0 idle ticks, 966 kernel ticks, 135 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 539 reads, 331 writes
+hd0:1: 543 reads, 333 writes
 hd1:0: 106 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1007 characters output
+Console: 1006 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

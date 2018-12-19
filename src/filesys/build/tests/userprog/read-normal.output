@@ -1,6 +1,6 @@
-Copying tests/userprog/read-normal into /tmp/9SM3UvzWni.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/9SM3UvzWni.dsk...
-Writing command line to /tmp/M2Wa_F4GRb.dsk...
+Copying tests/userprog/read-normal into /tmp/CW5UARekXY.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/CW5UARekXY.dsk...
+Writing command line to /tmp/SzRSy_8xz7.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put read-normal put sample.txt run read-normal
@@ -24,13 +24,13 @@ Executing 'read-normal':
 (read-normal) end
 read-normal: exit(0)
 Execution of 'read-normal' complete.
-Timer: 1359 ticks
-Thread: 0 idle ticks, 1202 kernel ticks, 160 user ticks
+Timer: 1127 ticks
+Thread: 0 idle ticks, 968 kernel ticks, 162 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 547 reads, 331 writes
+hd0:1: 551 reads, 333 writes
 hd1:0: 106 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1123 characters output
+Console: 1122 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

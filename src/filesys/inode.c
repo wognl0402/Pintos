@@ -21,7 +21,7 @@ struct inode_disk
     disk_sector_t block[DIRECT_BLOCK];                /* First data sector. */
     disk_sector_t sindirect;
 	disk_sector_t dindirect;
-    disk_sector_t start;
+    disk_sector_t parent;
 
 	bool is_dir;
 	off_t length;                       /* File size in bytes. */
@@ -93,7 +93,7 @@ struct inode
     bool removed;                       /* True if deleted, false otherwise. */
     int deny_write_cnt;                 /* 0: writes ok, >0: deny writes. */
     struct inode_disk data;             /* Inode content. */
-    disk_sector_t start;
+    disk_sector_t parent;
 	off_t length;
 	struct lock lock;
 	bool is_dir;
@@ -262,7 +262,8 @@ inode_create (disk_sector_t sector, off_t length, bool is_dir)
       disk_inode->length = length;
       disk_inode->magic = INODE_MAGIC;
 	  disk_inode->is_dir = is_dir;
- 	  if (inode_alloc (disk_inode, length)){
+	  disk_inode->parent = ROOT_DIR_SECTOR;
+	  if (inode_alloc (disk_inode, length)){
 		//PANIC("WHAT");
 		disk_write (filesys_disk, sector, disk_inode);
 	    success = true;
@@ -331,6 +332,8 @@ inode_open (disk_sector_t sector)
   //inode->start = datastart;
   inode->length = data->length;
   inode->is_dir = data->is_dir;
+  inode->parent = data->parent;
+  free (data);
   //lock_release (&i_lock);
   return inode;
 }
@@ -351,6 +354,9 @@ inode_get_inumber (const struct inode *inode)
   return inode->sector;
 }
 
+int inode_get_open_cnt (const struct inode *inode){
+  return inode->open_cnt;
+}
 /* Closes INODE and writes it to disk.
    If this was the last reference to INODE, frees its memory.
    If INODE was also a removed inode, frees its blocks. */
@@ -685,4 +691,25 @@ void inode_lock (const struct inode *inode){
 
 void inode_unlock (const struct inode *inode){
   lock_release(&((struct inode *) inode)->lock);
+}
+
+disk_sector_t get_parent_sector (const struct inode *inode){
+   
+  return inode->parent;
+}
+
+bool add_parent (disk_sector_t parent, disk_sector_t child){
+  struct inode *inode = inode_open(child);
+  if (inode== NULL)
+	return false;
+  struct inode_disk *id = calloc (1, sizeof *id);
+  disk_read (filesys_disk, child, id);
+
+  inode->parent = parent;
+  id->parent = parent;
+  disk_write (filesys_disk, child, id);
+
+  free(id);
+  inode_close (inode);
+  return true;
 }

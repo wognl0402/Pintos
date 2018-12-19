@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/grow-dir-lg into /tmp/cJx0cBrbCT.dsk...
-Copying tests/filesys/extended/tar into /tmp/cJx0cBrbCT.dsk...
-Writing command line to /tmp/tnnfOiD3SE.dsk...
+Copying tests/filesys/extended/grow-dir-lg into /tmp/AOvReJhr0m.dsk...
+Copying tests/filesys/extended/tar into /tmp/AOvReJhr0m.dsk...
+Writing command line to /tmp/GjIB1URi6q.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put grow-dir-lg put tar run grow-dir-lg
@@ -72,13 +72,13 @@ Executing 'grow-dir-lg':
 (grow-dir-lg) end
 grow-dir-lg: exit(0)
 Execution of 'grow-dir-lg' complete.
-Timer: 13691 ticks
-Thread: 0 idle ticks, 2101 kernel ticks, 11593 user ticks
+Timer: 11447 ticks
+Thread: 0 idle ticks, 1851 kernel ticks, 9599 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 7777 reads, 1154 writes
+hd0:1: 7883 reads, 1207 writes
 hd1:0: 227 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 3397 characters output
+Console: 3396 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

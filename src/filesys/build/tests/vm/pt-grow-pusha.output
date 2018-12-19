@@ -1,5 +1,5 @@
-Copying tests/vm/pt-grow-pusha into /tmp/lpcB8Im0uk.dsk...
-Writing command line to /tmp/_0T_9M0vkc.dsk...
+Copying tests/vm/pt-grow-pusha into /tmp/XLqQ229hHT.dsk...
+Writing command line to /tmp/J8hrufwgqH.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put pt-grow-pusha run pt-grow-pusha
@@ -19,13 +19,13 @@ Executing 'pt-grow-pusha':
 (pt-grow-pusha) end
 pt-grow-pusha: exit(0)
 Execution of 'pt-grow-pusha' complete.
-Timer: 1272 ticks
-Thread: 0 idle ticks, 1147 kernel ticks, 128 user ticks
+Timer: 1029 ticks
+Thread: 0 idle ticks, 906 kernel ticks, 126 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 502 reads, 323 writes
+hd0:1: 504 reads, 324 writes
 hd1:0: 104 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 949 characters output
+Console: 948 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

@@ -176,7 +176,7 @@ static int syscall_open_ (struct intr_frame *f){
 
   
   if (ff==NULL){
-	//printf("NOFILE\n");
+//	printf("NOFILE\n");
 	f->eax=-1;
 	return 0;
   }

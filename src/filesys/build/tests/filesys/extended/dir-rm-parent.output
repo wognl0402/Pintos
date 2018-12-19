@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/dir-rm-parent into /tmp/9IDzqwfcdr.dsk...
-Copying tests/filesys/extended/tar into /tmp/9IDzqwfcdr.dsk...
-Writing command line to /tmp/r4X4uHsfnl.dsk...
+Copying tests/filesys/extended/dir-rm-parent into /tmp/SBhX1d5rxj.dsk...
+Copying tests/filesys/extended/tar into /tmp/SBhX1d5rxj.dsk...
+Writing command line to /tmp/2lSX2gD8t1.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rm-parent put tar run dir-rm-parent
@@ -23,16 +23,16 @@ Executing 'dir-rm-parent':
 (dir-rm-parent) mkdir "b"
 (dir-rm-parent) chdir "b"
 (dir-rm-parent) remove "/a" (must fail)
-(dir-rm-parent) remove "/a" (must fail): FAILED
-dir-rm-parent: exit(1)
+(dir-rm-parent) end
+dir-rm-parent: exit(0)
 Execution of 'dir-rm-parent' complete.
-Timer: 2333 ticks
-Thread: 0 idle ticks, 2088 kernel ticks, 248 user ticks
+Timer: 2080 ticks
+Thread: 0 idle ticks, 1845 kernel ticks, 238 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1074 reads, 708 writes
+hd0:1: 1075 reads, 708 writes
 hd1:0: 226 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1168 characters output
+Console: 1140 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...
