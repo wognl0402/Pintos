@@ -5,8 +5,11 @@
 #include "threads/interrupt.h"
 #include "threads/thread.h"
 #include "vm/page.h"
-
+#include "userprog/syscall.h"
+#include "threads/synch.h"
+#include "filesys/cache.h"
 #define STACK_MAX 0x800000
+
 
 /* Number of page faults processed. */
 static long long page_fault_cnt;
@@ -92,7 +95,7 @@ kill (struct intr_frame *f)
       printf ("%s: dying due to interrupt %#04x (%s).\n",
               thread_name (), f->vec_no, intr_name (f->vec_no));
       intr_dump_frame (f);
-      exit_ (-1);
+	  exit_ (-1);
 	  //thread_exit (); 
 
     case SEL_KCSEG:
@@ -100,8 +103,11 @@ kill (struct intr_frame *f)
          Kernel code shouldn't throw exceptions.  (Page faults
          may cause kernel exceptions--but they shouldn't arrive
          here.)  Panic the kernel to make the point.  */
+   
+	  printf("kernel bug\n"); 
+	  
       intr_dump_frame (f);
-      PANIC ("Kernel bug - unexpected interrupt in kernel"); 
+	  PANIC ("Kernel bug - unexpected interrupt in kernel"); 
 
     default:
       /* Some other code segment?  Shouldn't happen.  Panic the
@@ -210,9 +216,24 @@ page_fault (struct intr_frame *f)
 
 	}
 	
-  }else
+  }else{
+	/*
+	printf ("page fault at %p: %s error %s page in %s context.\n",
+          fault_addr,
+          not_present ? "not present" : "rights violation",
+          write ? "writing" : "reading",
+          user ? "user" : "kernel");
+  */
+	
+	if (lock_held_by_current_thread (&filesys_lock))
+		release_filesys_lock ();
+	
+	if (lock_held_by_current_thread (&cache_lock))
+	  lock_release (&cache_lock);
+  
 	exit_ (-1);
-  /*
+  }
+	/*
   struct thread *t = thread_current ();
   struct hash *h = &t->spt;
   void *fault_page = (void *) pg_round_down (fault_addr);
@@ -258,7 +279,7 @@ page_fault (struct intr_frame *f)
   /* To implement virtual memory, delete the rest of the function
      body, and replace it with code that brings in the page to
      which fault_addr refers. */
-  printf ("Page fault at %p: %s error %s page in %s context.\n",
+  printf ("page fault at %p: %s error %s page in %s context.\n",
           fault_addr,
           not_present ? "not present" : "rights violation",
           write ? "writing" : "reading",
@@ -267,4 +288,3 @@ page_fault (struct intr_frame *f)
   //}
 
 }
-

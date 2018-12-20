@@ -11,6 +11,28 @@ void cache_init (void){
   thread_create ("writeback", 0, write_back, NULL);
 }
 
+void cache_bye (void){
+  lock_acquire (&cache_lock);
+  struct cache_entry *c;
+  struct list_elem *e = list_begin (&cache);
+  struct list_elem *next;
+  while (e != list_end (&cache)){
+	next = list_next (e);
+	struct cache_entry *c = list_entry (e, struct cache_entry, c_elem);
+//	if (c->in_use>0)
+//	  continue;
+	if (c->dirty){
+	  disk_write (filesys_disk, c->sector, c->buf);
+	  c->dirty = false;
+	}
+	list_remove (&c->c_elem);
+	free (c);
+	e= next;
+	cache_size--;
+  }
+  lock_release (&cache_lock);	
+}
+
 void cache_destroy (void){
   lock_acquire (&cache_lock);
   struct cache_entry *c;

@@ -39,7 +39,7 @@ filesys_init (bool format)
 void
 filesys_done (void) 
 {
-  cache_destroy ();
+  cache_bye ();
   free_map_close ();
 }
 
@@ -88,6 +88,9 @@ filesys_open (const char *name)
 {
   char path [strlen(name)+1];
   char filename [strlen(name)+1];
+
+  if (strlen(name) == 0)
+	return NULL;
   get_dir (name, path);
   get_filename (name, filename);
 
@@ -104,13 +107,17 @@ filesys_open (const char *name)
     }
   }dir_close (dir);
 */
-  if (dir == NULL)
+  if (dir == NULL){
+	//printf("that\n");
 	return NULL;
+  }
   if (strlen(filename) >0){
     dir_lookup (dir, filename, &inode);
     dir_close (dir);
-  }else
+  }else{
+	//printf("this\n");
 	inode = dir_get_inode (dir);
+  }
   return file_open (inode);
 }
 
@@ -129,22 +136,43 @@ filesys_remove (const char *name)
   struct dir *dir = dir_open_path (path);
 
   //struct dir *dir = dir_open_root ();
-  bool success = dir != NULL && dir_remove (dir, filename);
+  bool success = (dir != NULL && dir_remove (dir, filename));
+  //printf("fs_remove...|%d \n", success);
   dir_close (dir); 
 
   return success;
 }
 
 bool
-filesys_chdir (const char *path){
+filesys_chdir (const char *name){
+  //printf("chdir init\n");
+  char path [strlen(name)+1];
+  char filename [strlen(name)+1];
+  get_dir(name,path);
+  get_filename (name, filename);
   struct dir *dir = dir_open_path (path);
+  struct inode *inode = NULL;
 
   if (dir == NULL)
 	return false;
-
-  dir_close (thread_current ()->cwd);
+  if (strlen (filename)>0){
+	if (!dir_lookup (dir, filename, &inode))
+	//  printf("no dir..%s\n", path);
+//	dir_close (dir);
+	//if (!inode_is_dir (inode))
+	  //return false;
+	dir_close (dir);
+	dir = dir_open (inode);
+	//printf("let's go to [%s]\n", filename);
+  }
+  if (dir){
+  //printf("go\n");
+	dir_close (thread_current ()->cwd);
   thread_current ()->cwd = dir;
   return true;
+  }
+// printf("no\n");
+  return false;
 }
 
 /* Formats the file system. */

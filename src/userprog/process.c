@@ -134,7 +134,11 @@ start_process (void *f_name)
 	thread_exit ();
   }
  
-  thread_current ()->cwd = dir_open_root (); 
+  if (parent != NULL && parent->cwd != NULL)
+	thread_current ()->cwd = dir_reopen (parent->cwd);
+  else
+	thread_current ()->cwd = dir_open_root ();
+  //thread_current ()->cwd = dir_open_root (); 
   /* Start the user process by simulating a return from an
      interrupt, implemented by intr_exit (in
      threads/intr-stubs.S).  Because intr_exit takes all of its
@@ -261,7 +265,7 @@ process_exit (void)
   //curr->spt= NULL;
   //printf ("spt destruction done\n");
 #endif
-  cache_destroy ();
+ // cache_destroy ();
 
   if (curr->cwd)
 	dir_close (curr->cwd);
@@ -294,7 +298,7 @@ process_exit (void)
 
 
 
-  
+
   pd = curr->pagedir;
   if (pd != NULL) 
     {

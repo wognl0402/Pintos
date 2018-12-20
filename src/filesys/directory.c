@@ -61,35 +61,39 @@ dir_open_root (void)
 struct dir *
 dir_open_path (const char *path){
   int len = strlen (path);
-  char *s = malloc (len+1);
-  memcpy (s, path, len+1);
+  char s[len+1];
+  strlcpy (s, path, len+1);
 
 //  struct dir *d = dir_open_root ();
   struct dir *d;
-  if (path[0] == 47)
+  if (path[0] == '/')
 	d = dir_open_root ();
   else{
-	if (thread_current ()->cwd == NULL)
+	//printf("...%s\n", path);
+	if (thread_current ()->cwd == NULL){
+	  //printf("nonsense\n");
 	  d = dir_open_root ();
-	else
+  	}else{
 	  d = dir_reopen (thread_current ()->cwd);
+  }
   }
 
   char *token, *save;
   for (token = strtok_r (s, "/", &save);
 	  token != NULL;
 	  token = strtok_r (NULL, "/", &save)){
-	if (strcmp (token, ".") ==0)
+	//printf("here?\n");
+	if (strcmp (token, ".") ==0){
 	  continue;
+	}
 	struct inode *inode = NULL;
 	if (strcmp(token, "..") == 0){
 	  if (!get_parent (d, &inode))
 		return NULL;
 	//  printf("okay\n");
-	  continue;
-	}
-	
-	if (!dir_lookup (d, token, &inode)){
+	  //printf("yeah\n");
+	  //continue;
+	}else if (!dir_lookup (d, token, &inode)){
 	  dir_close (d);
 	  return NULL;
 	}
@@ -148,9 +152,13 @@ lookup (const struct dir *dir, const char *name,
 
   for (ofs = 0; inode_read_at (dir->inode, &e, sizeof e, ofs) == sizeof e;
        ofs += sizeof e) {
-	if (e.in_use && !strcmp (name, e.name)) 
+	
+		if (e.in_use && !strcmp (name, e.name)) 
       {
-        if (ep != NULL)
+       
+		//if (strcmp (name, "dir21")==0)
+		//  printf("dir21: e.name[%s]\n",e.name); 
+		if (ep != NULL)
           *ep = e;
         if (ofsp != NULL)
           *ofsp = ofs;
@@ -196,15 +204,17 @@ dir_add (struct dir *dir, const char *name, disk_sector_t inode_sector)
   
   ASSERT (dir != NULL);
   ASSERT (name != NULL);
+  //printf("adding %s\n", name);
 
   /* Check NAME for validity. */
   if (*name == '\0' || strlen (name) > NAME_MAX)
     return false;
 
   /* Check that NAME is not in use. */
-  if (lookup (dir, name, NULL, NULL))
+  if (lookup (dir, name, NULL, NULL)){
+	//printf("noname\n");
     goto done;
-
+}
   if (!add_parent (inode_get_inumber (dir_get_inode (dir)), inode_sector))
 	goto done;
   /* Set OFS to offset of free slot.
@@ -226,6 +236,7 @@ dir_add (struct dir *dir, const char *name, disk_sector_t inode_sector)
   success = inode_write_at (dir->inode, &e, sizeof e, ofs) == sizeof e;
 
  done:
+  //printf("adding done%s | %d\n", name, success);
   return success;
 }
 /*
@@ -261,31 +272,44 @@ dir_remove (struct dir *dir, const char *name)
   ASSERT (dir != NULL);
   ASSERT (name != NULL);
 
+  //printf("removing %s \n", name);
   /* Find directory entry. */
-  if (!lookup (dir, name, &e, &ofs))
+  if (!lookup (dir, name, &e, &ofs)){
+	//printf("CAN'T LOOKUP\n");
     goto done;
+  }
 
   /* Open inode. */
   inode = inode_open (e.inode_sector);
-  if (inode == NULL)
+  if (inode == NULL){
+	//printf("inode NULL\n");
     goto done;
+  }
 //inode_is_dir (inode);
-  if (inode_is_dir (inode) && inode_get_open_cnt (inode) >1)
+  if (inode_is_dir (inode) && inode_get_open_cnt (inode) >2){
+	//printf("WORKING.. isdir?: %d| opencnt: %d\n", inode_is_dir (inode), inode_get_open_cnt (inode));
 	goto done;
+  }
   
   
-  if (inode_is_dir (inode) && !dir_is_empty (inode))
+  if (inode_is_dir (inode) && !dir_is_empty (inode)){
+	//printf("NONEMPTY..\n");
 	goto done;
+  }
   
   /* Erase directory entry. */
   e.in_use = false;
-  if (inode_write_at (dir->inode, &e, sizeof e, ofs) != sizeof e) 
+  if (inode_write_at (dir->inode, &e, sizeof e, ofs) != sizeof e){
+   //printf("inode_write error\n");	
     goto done;
+  }
 
+  //printf("....\n");
   /* Remove inode. */
   inode_remove (inode);
   success = true;
 
+  //printf("????\n");
  done:
   inode_close (inode);
   return success;
@@ -344,10 +368,13 @@ void get_filename (const char *path, char *filename){
   //printf("### %s ###\n", fn);
     temp = token;
   }
-  /*
-  if (strcmp(temp, ".") ==0)
+  
+  if (strcmp(temp, ".") ==0 || strcmp(temp, "..") == 0){
 	*temp = "";
-  */
+	strlcpy (filename, temp, 1);
+    return;
+  }
+  
   //printf ("@@@ %s @@@\n", token);
   strlcpy (filename, temp, (strlen(temp)+1));
   free (fn);
@@ -379,13 +406,16 @@ void get_dir (const char *path, char *directory){
 	
 	temp = token;
   }
- /*
+ 
   if (strcmp (temp, ".")== 0){
    memcpy (dir, temp, 1);   
 //dir = ".";
    dir +=1;
+  }else if (strcmp (temp, "..") == 0){
+	memcpy (dir, temp, 2);
+	dir +=2;
   }
-  */
+  
 
   if(dir) *dir = '\0';
   free (fn);

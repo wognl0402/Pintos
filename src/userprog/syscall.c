@@ -185,7 +185,7 @@ static int syscall_open_ (struct intr_frame *f){
  
   struct inode *i = file_get_inode (fd_->file);
   if (i != NULL & inode_is_dir (i))
-	  fd_->dir = dir_open (i);
+	  fd_->dir = dir_open ( inode_reopen (i));
   else
 	fd_->dir = NULL;
 

@@ -23,6 +23,7 @@ struct cache_entry {
 };
 
 void cache_init (void);
+void cache_bye (void);
 void cache_destroy (void);
 
 struct cache_entry *cache_lookup (disk_sector_t sector);

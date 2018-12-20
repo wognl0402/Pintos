@@ -570,7 +570,8 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
 	
 	//inode_unlock (inode);
   }
-//  lock_acquire (&i_lock);
+  inode_unlock (inode);
+  lock_acquire (&i_lock);
   while (size > 0) 
     {
       /* Sector to write, starting byte offset within sector. */
@@ -646,8 +647,7 @@ inode_write_at (struct inode *inode, const void *buffer_, off_t size,
       offset += chunk_size;
       bytes_written += chunk_size;
     }
-  //lock_release (&i_lock);
-  inode_unlock (inode);
+  lock_release (&i_lock);
   cache_destroy();
   free (bounce);
   return bytes_written;
