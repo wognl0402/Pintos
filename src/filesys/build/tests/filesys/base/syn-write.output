@@ -1,6 +1,6 @@
-Copying tests/filesys/base/syn-write into /tmp/PP5LviqCK0.dsk...
-Copying tests/filesys/base/child-syn-wrt into /tmp/PP5LviqCK0.dsk...
-Writing command line to /tmp/Yo3n5VzD34.dsk...
+Copying tests/filesys/base/syn-write into /tmp/DFaOz3s1KS.dsk...
+Copying tests/filesys/base/child-syn-wrt into /tmp/DFaOz3s1KS.dsk...
+Writing command line to /tmp/Od19uKgebA.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put syn-write put child-syn-wrt run syn-write
@@ -26,27 +26,27 @@ Executing 'syn-write':
 child-syn-wrt: exit(0)
 (syn-write) exec child 5 of 10: "child-syn-wrt 4"
 child-syn-wrt: exit(2)
-(syn-write) exec child 6 of 10: "child-syn-wrt 5"
-child-syn-wrt: exit(3)
 child-syn-wrt: exit(1)
-child-syn-wrt: exit(4)
+child-syn-wrt: exit(3)
+(syn-write) exec child 6 of 10: "child-syn-wrt 5"
 (syn-write) exec child 7 of 10: "child-syn-wrt 6"
 (syn-write) exec child 8 of 10: "child-syn-wrt 7"
+child-syn-wrt: exit(4)
 child-syn-wrt: exit(5)
 (syn-write) exec child 9 of 10: "child-syn-wrt 8"
 child-syn-wrt: exit(6)
 (syn-write) exec child 10 of 10: "child-syn-wrt 9"
-(syn-write) wait for child 1 of 10 returned 0 (expected 0)
 child-syn-wrt: exit(7)
+(syn-write) wait for child 1 of 10 returned 0 (expected 0)
 (syn-write) wait for child 2 of 10 returned 1 (expected 1)
 (syn-write) wait for child 3 of 10 returned 2 (expected 2)
 (syn-write) wait for child 4 of 10 returned 3 (expected 3)
 (syn-write) wait for child 5 of 10 returned 4 (expected 4)
-child-syn-wrt: exit(8)
 (syn-write) wait for child 6 of 10 returned 5 (expected 5)
-child-syn-wrt: exit(9)
 (syn-write) wait for child 7 of 10 returned 6 (expected 6)
 (syn-write) wait for child 8 of 10 returned 7 (expected 7)
+child-syn-wrt: exit(8)
+child-syn-wrt: exit(9)
 (syn-write) wait for child 9 of 10 returned 8 (expected 8)
 (syn-write) wait for child 10 of 10 returned 9 (expected 9)
 (syn-write) open "stuff"
@@ -54,10 +54,10 @@ child-syn-wrt: exit(9)
 (syn-write) end
 syn-write: exit(0)
 Execution of 'syn-write' complete.
-Timer: 4288 ticks
-Thread: 30 idle ticks, 2363 kernel ticks, 1902 user ticks
+Timer: 4268 ticks
+Thread: 30 idle ticks, 2365 kernel ticks, 1880 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 1630 reads, 735 writes
+hd0:1: 1615 reads, 735 writes
 hd1:0: 228 reads, 0 writes
 hd1:1: 0 reads, 0 writes
 Console: 2385 characters output

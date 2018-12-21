@@ -1,5 +1,5 @@
-Copying tests/vm/pt-bad-addr into /tmp/cUl1JUPrB5.dsk...
-Writing command line to /tmp/d77FaqjdtB.dsk...
+Copying tests/vm/pt-bad-addr into /tmp/rIHhox1RHY.dsk...
+Writing command line to /tmp/DM4lib3bvg.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put pt-bad-addr run pt-bad-addr
@@ -18,8 +18,8 @@ Executing 'pt-bad-addr':
 (pt-bad-addr) begin
 pt-bad-addr: exit(-1)
 Execution of 'pt-bad-addr' complete.
-Timer: 1166 ticks
-Thread: 30 idle ticks, 1038 kernel ticks, 102 user ticks
+Timer: 1165 ticks
+Thread: 30 idle ticks, 1037 kernel ticks, 102 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 504 reads, 324 writes
 hd1:0: 104 reads, 0 writes

@@ -187,7 +187,7 @@ void put_read_ahead (disk_sector_t ahead){
   if (list_empty (&aheads)){
 	a->sector = ahead;
 	list_push_back (&aheads, &a->e);
-	//cond_signal (&cache_lock, &empty);
+	cond_signal (&empty, &cache_lock);
   }else{
 	a->sector = ahead;
 	list_push_back (&aheads, &a->e);
@@ -203,7 +203,8 @@ void read_ahead (disk_sector_t ahead){
   lock_acquire (&cache_lock);
   if (list_empty (&aheads)){
 	lock_release (&cache_lock);
-	continue;//cond_wait (&cache_lock, &empty);
+	//continue;
+	cond_wait (&empty, &cache_lock);
   }
 
   temp = list_begin (&aheads);

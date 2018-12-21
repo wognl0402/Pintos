@@ -1,6 +1,6 @@
-Copying tests/vm/page-merge-stk into /tmp/gkKbkromv2.dsk...
-Copying tests/vm/child-qsort into /tmp/gkKbkromv2.dsk...
-Writing command line to /tmp/ENe3wTJpWC.dsk...
+Copying tests/vm/page-merge-stk into /tmp/m2CSG6m62M.dsk...
+Copying tests/vm/child-qsort into /tmp/m2CSG6m62M.dsk...
+Writing command line to /tmp/rrhN05Atjb.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put page-merge-stk put child-qsort run page-merge-stk
@@ -22,26 +22,26 @@ Executing 'page-merge-stk':
 (page-merge-stk) sort chunk 0
 (page-merge-stk) sort chunk 1
 (page-merge-stk) sort chunk 2
-child-qsort: exit(72)
 (page-merge-stk) sort chunk 3
-(page-merge-stk) sort chunk 4
 child-qsort: exit(72)
+(page-merge-stk) sort chunk 4
 child-qsort: exit(72)
 (page-merge-stk) sort chunk 5
 child-qsort: exit(72)
 (page-merge-stk) sort chunk 6
-(page-merge-stk) sort chunk 7
 child-qsort: exit(72)
+child-qsort: exit(72)
+(page-merge-stk) sort chunk 7
 child-qsort: exit(72)
 (page-merge-stk) wait for child 0
 (page-merge-stk) wait for child 1
 (page-merge-stk) wait for child 2
 (page-merge-stk) wait for child 3
 (page-merge-stk) wait for child 4
+child-qsort: exit(72)
+child-qsort: exit(72)
 (page-merge-stk) wait for child 5
 (page-merge-stk) wait for child 6
-child-qsort: exit(72)
-child-qsort: exit(72)
 (page-merge-stk) wait for child 7
 (page-merge-stk) merge
 (page-merge-stk) verify
@@ -49,13 +49,13 @@ child-qsort: exit(72)
 (page-merge-stk) end
 page-merge-stk: exit(0)
 Execution of 'page-merge-stk' complete.
-Timer: 104407 ticks
-Thread: 30 idle ticks, 2984 kernel ticks, 101401 user ticks
+Timer: 104382 ticks
+Thread: 30 idle ticks, 2986 kernel ticks, 101374 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 27959 reads, 10114 writes
+hd0:1: 27960 reads, 10114 writes
 hd1:0: 225 reads, 0 writes
-hd1:1: 544 reads, 1720 writes
+hd1:1: 592 reads, 1768 writes
 Console: 1835 characters output
 Keyboard: 0 keys pressed
-Exception: 621 page faults
+Exception: 624 page faults
 Powering off...
