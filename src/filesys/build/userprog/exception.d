@@ -10,4 +10,6 @@ userprog/exception.o: ../../userprog/exception.c \
   ../../threads/thread.h ../../threads/pte.h ../../threads/vaddr.h \
   ../../threads/loader.h ../../userprog/pagedir.h ../../filesys/file.h \
   ../../filesys/off_t.h ../../filesys/directory.h ../../devices/disk.h \
-  ../../vm/page.h
+  ../../vm/page.h ../../userprog/syscall.h ../../userprog/process.h \
+  ../../filesys/file.h ../../filesys/filesys.h ../../threads/synch.h \
+  ../../filesys/cache.h ../../filesys/filesys.h ../../threads/synch.h

@@ -1,6 +1,6 @@
-Copying tests/userprog/open-normal into /tmp/v7aFy_H8bc.dsk...
-Copying ../../tests/userprog/sample.txt into /tmp/v7aFy_H8bc.dsk...
-Writing command line to /tmp/E44vxMb8Jp.dsk...
+Copying tests/userprog/open-normal into /tmp/RMDkW1JwXu.dsk...
+Copying ../../tests/userprog/sample.txt into /tmp/RMDkW1JwXu.dsk...
+Writing command line to /tmp/M9ld5sSTz1.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put open-normal put sample.txt run open-normal
@@ -21,13 +21,13 @@ Executing 'open-normal':
 (open-normal) end
 open-normal: exit(0)
 Execution of 'open-normal' complete.
-Timer: 1138 ticks
-Thread: 30 idle ticks, 976 kernel ticks, 135 user ticks
+Timer: 1247 ticks
+Thread: 30 idle ticks, 1111 kernel ticks, 109 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 543 reads, 333 writes
 hd1:0: 106 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 993 characters output
+Console: 994 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

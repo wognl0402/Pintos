@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-over-stk into /tmp/ok5vzqWWwK.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/ok5vzqWWwK.dsk...
-Writing command line to /tmp/9GjAw0ZWkN.dsk...
+Copying tests/vm/mmap-over-stk into /tmp/50ZcmlNWeP.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/50ZcmlNWeP.dsk...
+Writing command line to /tmp/atHNitqSA3.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-over-stk put sample.txt run mmap-over-stk
@@ -23,13 +23,13 @@ Executing 'mmap-over-stk':
 (mmap-over-stk) end
 mmap-over-stk: exit(0)
 Execution of 'mmap-over-stk' complete.
-Timer: 1158 ticks
-Thread: 30 idle ticks, 983 kernel ticks, 148 user ticks
+Timer: 1268 ticks
+Thread: 30 idle ticks, 1119 kernel ticks, 122 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 547 reads, 336 writes
 hd1:0: 107 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1090 characters output
+Console: 1091 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-over-code into /tmp/Es6bxqsvEr.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/Es6bxqsvEr.dsk...
-Writing command line to /tmp/80bxxRLXM7.dsk...
+Copying tests/vm/mmap-over-code into /tmp/WRRzBpbBsd.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/WRRzBpbBsd.dsk...
+Writing command line to /tmp/Et6bIQEQKy.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-over-code put sample.txt run mmap-over-code
@@ -23,13 +23,13 @@ Executing 'mmap-over-code':
 (mmap-over-code) end
 mmap-over-code: exit(0)
 Execution of 'mmap-over-code' complete.
-Timer: 1158 ticks
-Thread: 30 idle ticks, 983 kernel ticks, 148 user ticks
+Timer: 1268 ticks
+Thread: 30 idle ticks, 1119 kernel ticks, 122 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 547 reads, 336 writes
 hd1:0: 107 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1099 characters output
+Console: 1100 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

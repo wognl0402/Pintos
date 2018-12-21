@@ -1,5 +1,5 @@
-Copying tests/filesys/base/sm-create into /tmp/HdS9PBy8dj.dsk...
-Writing command line to /tmp/lak5tiZyP0.dsk...
+Copying tests/filesys/base/sm-create into /tmp/iCnGBCtIxu.dsk...
+Writing command line to /tmp/8rBTRMgwaf.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put sm-create run sm-create
@@ -23,13 +23,13 @@ Executing 'sm-create':
 (sm-create) end
 sm-create: exit(0)
 Execution of 'sm-create' complete.
-Timer: 1254 ticks
-Thread: 30 idle ticks, 933 kernel ticks, 298 user ticks
+Timer: 1376 ticks
+Thread: 30 idle ticks, 1050 kernel ticks, 301 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 596 reads, 363 writes
 hd1:0: 107 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1061 characters output
+Console: 1062 characters output
 Keyboard: 0 keys pressed
 Exception: 6 page faults
 Powering off...

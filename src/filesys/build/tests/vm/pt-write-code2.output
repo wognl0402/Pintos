@@ -1,6 +1,6 @@
-Copying tests/vm/pt-write-code2 into /tmp/tLq1EIgP6S.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/tLq1EIgP6S.dsk...
-Writing command line to /tmp/5ke1E6dLiW.dsk...
+Copying tests/vm/pt-write-code2 into /tmp/upbHg17T9V.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/upbHg17T9V.dsk...
+Writing command line to /tmp/v3ncLO7lpz.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put pt-write-code2 put sample.txt run pt-write-code2
@@ -20,7 +20,14 @@ Executing 'pt-write-code2':
 (pt-write-code2) begin
 (pt-write-code2) open "sample.txt"
 pt-write-code2: exit(-1)
-Kernel PANIC at ../../threads/synch.c:238 in lock_acquire(): assertion `!lock_held_by_current_thread (lock)' failed.
-Call stack: 0xc0122d18pt-write-code2: exit(-1)
-Kernel PANIC recursion at ../../threads/synch.c:238 in lock_acquire().
-Simulation terminated due to kernel panic.
+Execution of 'pt-write-code2' complete.
+Timer: 1264 ticks
+Thread: 30 idle ticks, 1123 kernel ticks, 114 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 549 reads, 336 writes
+hd1:0: 107 reads, 0 writes
+hd1:1: 0 reads, 0 writes
+Console: 1033 characters output
+Keyboard: 0 keys pressed
+Exception: 6 page faults
+Powering off...

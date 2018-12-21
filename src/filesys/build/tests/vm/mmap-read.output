@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-read into /tmp/x17g8avJI6.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/x17g8avJI6.dsk...
-Writing command line to /tmp/IeazugPhDD.dsk...
+Copying tests/vm/mmap-read into /tmp/Oq93_p6eRG.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/Oq93_p6eRG.dsk...
+Writing command line to /tmp/9DfT2VW3UE.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-read put sample.txt run mmap-read
@@ -23,8 +23,8 @@ Executing 'mmap-read':
 (mmap-read) end
 mmap-read: exit(0)
 Execution of 'mmap-read' complete.
-Timer: 1205 ticks
-Thread: 30 idle ticks, 1004 kernel ticks, 178 user ticks
+Timer: 1326 ticks
+Thread: 30 idle ticks, 1151 kernel ticks, 148 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 574 reads, 345 writes
 hd1:0: 110 reads, 0 writes

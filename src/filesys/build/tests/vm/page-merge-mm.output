@@ -1,6 +1,6 @@
-Copying tests/vm/page-merge-mm into /tmp/hVaezJb2RZ.dsk...
-Copying tests/vm/child-qsort-mm into /tmp/hVaezJb2RZ.dsk...
-Writing command line to /tmp/7c49w_iY0m.dsk...
+Copying tests/vm/page-merge-mm into /tmp/sxBRZ1f5rZ.dsk...
+Copying tests/vm/child-qsort-mm into /tmp/sxBRZ1f5rZ.dsk...
+Writing command line to /tmp/Y4t12Ro02T.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put page-merge-mm put child-qsort-mm run page-merge-mm
@@ -38,21 +38,21 @@ child-qsort-mm: exit(80)
 (page-merge-mm) wait for child 2
 (page-merge-mm) wait for child 3
 (page-merge-mm) wait for child 4
+child-qsort-mm: exit(80)
 (page-merge-mm) wait for child 5
-child-qsort-mm: exit(80)
 (page-merge-mm) wait for child 6
-(page-merge-mm) wait for child 7
 child-qsort-mm: exit(80)
+(page-merge-mm) wait for child 7
 (page-merge-mm) merge
 (page-merge-mm) verify
 (page-merge-mm) success, buf_idx=1,048,576
 (page-merge-mm) end
 page-merge-mm: exit(0)
 Execution of 'page-merge-mm' complete.
-Timer: 103292 ticks
-Thread: 30 idle ticks, 2089 kernel ticks, 101176 user ticks
+Timer: 108077 ticks
+Thread: 30 idle ticks, 2443 kernel ticks, 105612 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 28007 reads, 10114 writes
+hd0:1: 28011 reads, 10114 writes
 hd1:0: 225 reads, 0 writes
 hd1:1: 448 reads, 1624 writes
 Console: 1837 characters output

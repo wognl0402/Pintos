@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-over-data into /tmp/An6sbiSzUP.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/An6sbiSzUP.dsk...
-Writing command line to /tmp/KXSAAnGb3S.dsk...
+Copying tests/vm/mmap-over-data into /tmp/6lRY3RjDwO.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/6lRY3RjDwO.dsk...
+Writing command line to /tmp/IlKeYgV_8k.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-over-data put sample.txt run mmap-over-data
@@ -23,13 +23,13 @@ Executing 'mmap-over-data':
 (mmap-over-data) end
 mmap-over-data: exit(0)
 Execution of 'mmap-over-data' complete.
-Timer: 1158 ticks
-Thread: 30 idle ticks, 983 kernel ticks, 148 user ticks
+Timer: 1268 ticks
+Thread: 30 idle ticks, 1119 kernel ticks, 122 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 547 reads, 336 writes
 hd1:0: 107 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1099 characters output
+Console: 1100 characters output
 Keyboard: 0 keys pressed
 Exception: 5 page faults
 Powering off...

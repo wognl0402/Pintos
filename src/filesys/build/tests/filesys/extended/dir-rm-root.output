@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/dir-rm-root into /tmp/3s5ItuOqjM.dsk...
-Copying tests/filesys/extended/tar into /tmp/3s5ItuOqjM.dsk...
-Writing command line to /tmp/GG94c1wG6O.dsk...
+Copying tests/filesys/extended/dir-rm-root into /tmp/UmBvdXQk01.dsk...
+Copying tests/filesys/extended/tar into /tmp/UmBvdXQk01.dsk...
+Writing command line to /tmp/YGDF1i80wS.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-rm-root put tar run dir-rm-root
@@ -23,8 +23,8 @@ Executing 'dir-rm-root':
 (dir-rm-root) end
 dir-rm-root: exit(0)
 Execution of 'dir-rm-root' complete.
-Timer: 2115 ticks
-Thread: 30 idle ticks, 1880 kernel ticks, 208 user ticks
+Timer: 2307 ticks
+Thread: 30 idle ticks, 2053 kernel ticks, 227 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1063 reads, 698 writes
 hd1:0: 225 reads, 0 writes

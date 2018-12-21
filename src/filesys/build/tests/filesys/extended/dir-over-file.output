@@ -1,6 +1,6 @@
-Copying tests/filesys/extended/dir-over-file into /tmp/UliHlUNA4t.dsk...
-Copying tests/filesys/extended/tar into /tmp/UliHlUNA4t.dsk...
-Writing command line to /tmp/UhL0iMadtc.dsk...
+Copying tests/filesys/extended/dir-over-file into /tmp/nrZm2tw4r1.dsk...
+Copying tests/filesys/extended/tar into /tmp/nrZm2tw4r1.dsk...
+Writing command line to /tmp/Fq3rSidorR.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put dir-over-file put tar run dir-over-file
@@ -23,8 +23,8 @@ Executing 'dir-over-file':
 (dir-over-file) end
 dir-over-file: exit(0)
 Execution of 'dir-over-file' complete.
-Timer: 2113 ticks
-Thread: 30 idle ticks, 1881 kernel ticks, 205 user ticks
+Timer: 2304 ticks
+Thread: 30 idle ticks, 2055 kernel ticks, 222 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1055 reads, 701 writes
 hd1:0: 225 reads, 0 writes

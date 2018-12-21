@@ -1,6 +1,6 @@
-Copying tests/vm/mmap-remove into /tmp/UJSpAhoFuR.dsk...
-Copying ../../tests/vm/sample.txt into /tmp/UJSpAhoFuR.dsk...
-Writing command line to /tmp/TySFUDcFlg.dsk...
+Copying tests/vm/mmap-remove into /tmp/5lyslIZAc_.dsk...
+Copying ../../tests/vm/sample.txt into /tmp/5lyslIZAc_.dsk...
+Writing command line to /tmp/5elBfQxfIU.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put mmap-remove put sample.txt run mmap-remove
@@ -26,8 +26,8 @@ Executing 'mmap-remove':
 (mmap-remove) end
 mmap-remove: exit(0)
 Execution of 'mmap-remove' complete.
-Timer: 1663 ticks
-Thread: 30 idle ticks, 1004 kernel ticks, 632 user ticks
+Timer: 1807 ticks
+Thread: 30 idle ticks, 1098 kernel ticks, 682 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 796 reads, 516 writes
 hd1:0: 110 reads, 0 writes

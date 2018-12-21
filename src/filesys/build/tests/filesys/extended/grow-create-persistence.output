@@ -1,4 +1,4 @@
-Writing command line to /tmp/mYdV3CUfhL.dsk...
+Writing command line to /tmp/3hmDBnxFB_.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q run 'tar fs.tar /' get fs.tar
@@ -15,8 +15,8 @@ Executing 'tar fs.tar /':
 tar: exit(0)
 Execution of 'tar fs.tar /' complete.
 Getting 'fs.tar' from the file system...
-Timer: 4485 ticks
-Thread: 30 idle ticks, 853 kernel ticks, 3605 user ticks
+Timer: 4797 ticks
+Thread: 30 idle ticks, 912 kernel ticks, 3858 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 2507 reads, 1032 writes
 hd1:0: 0 reads, 230 writes
@@ -25,4 +25,4 @@ Console: 849 characters output
 Keyboard: 0 keys pressed
 Exception: 4 page faults
 Powering off...
-Copying tests/filesys/extended/grow-create.tar out of /tmp/byn0s9_pEn.dsk...
+Copying tests/filesys/extended/grow-create.tar out of /tmp/AnE2GqdLGQ.dsk...

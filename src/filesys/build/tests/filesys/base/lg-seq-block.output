@@ -1,5 +1,5 @@
-Copying tests/filesys/base/lg-seq-block into /tmp/e9_deJoYis.dsk...
-Writing command line to /tmp/YAqM59xO48.dsk...
+Copying tests/filesys/base/lg-seq-block into /tmp/VcgN4sRoX2.dsk...
+Writing command line to /tmp/09hqPvhNmp.dsk...
 warning: can't find squish-pty, so terminal input will fail
 bochs -q
 Kernel command line: -q -f put lg-seq-block run lg-seq-block
@@ -26,13 +26,13 @@ Executing 'lg-seq-block':
 (lg-seq-block) end
 lg-seq-block: exit(0)
 Execution of 'lg-seq-block' complete.
-Timer: 3591 ticks
-Thread: 30 idle ticks, 939 kernel ticks, 2625 user ticks
+Timer: 3931 ticks
+Thread: 30 idle ticks, 1167 kernel ticks, 2738 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 1845 reads, 962 writes
 hd1:0: 108 reads, 0 writes
 hd1:1: 0 reads, 0 writes
-Console: 1186 characters output
+Console: 1187 characters output
 Keyboard: 0 keys pressed
 Exception: 23 page faults
 Powering off...

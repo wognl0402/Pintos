@@ -4,12 +4,25 @@
 #include "threads/malloc.h"
 #include "threads/thread.h"
 
+//bool can_read_ahead = true;
+struct list aheads;
+struct ahead{
+  disk_sector_t sector;
+  struct list_elem e;
+};
+void read_ahead (disk_sector_t );
+
+struct condition empty;
 void cache_init (void){
   list_init (&cache);
+  cond_init (&empty);
+  list_init (&aheads); 
   lock_init (&cache_lock);
   cache_size = 0;
   thread_create ("writeback", 0, write_back, NULL);
+  thread_create ("readahead", 0, read_ahead, NULL);
 }
+
 
 void cache_bye (void){
   lock_acquire (&cache_lock);
@@ -71,7 +84,12 @@ struct cache_entry *cache_lookup (disk_sector_t sector){
 }
 	
 struct cache_entry *cache_return (disk_sector_t sector, bool write){
+  //init_read_ahead (sector+1);
+  //printf("let's put ahead\n");
+  put_read_ahead (sector+1);
   lock_acquire(&cache_lock);
+ // put_ahead (sector+1)
+ // lock_release (&cache_lock);
   struct cache_entry *c = cache_lookup (sector);
   
   /*struct list_elem *e;
@@ -149,5 +167,65 @@ void write_back (void *aux UNUSED){
   {
 	timer_sleep (1000);
 	cache_destroy ();
+  }
+}
+/*
+void read_ahead (void *aux){
+  disk_sector_t ahead = * (disk_sector_t *)aux;
+  lock_acquire (&cache_lock);
+  struct cache_entry *c = cache_lookup (ahead);
+  if (c == NULL)
+	c = cache_evict_SC (ahead, false);
+  lock_release (&cache_lock);
+
+  free (aux);
+}
+*/
+void put_read_ahead (disk_sector_t ahead){
+  lock_acquire (&cache_lock);
+  struct ahead *a = malloc (sizeof *a);
+  if (list_empty (&aheads)){
+	a->sector = ahead;
+	list_push_back (&aheads, &a->e);
+	//cond_signal (&cache_lock, &empty);
+  }else{
+	a->sector = ahead;
+	list_push_back (&aheads, &a->e);
+  }
+  lock_release (&cache_lock);
+}
+
+  
+
+void read_ahead (disk_sector_t ahead){
+  while(true){
+  struct list_elem *temp;
+  lock_acquire (&cache_lock);
+  if (list_empty (&aheads)){
+	lock_release (&cache_lock);
+	continue;//cond_wait (&cache_lock, &empty);
+  }
+
+  temp = list_begin (&aheads);
+  lock_release (&cache_lock);
+  //lllldjdjdjdjdkdkdkdkdkdk
+  lock_acquire (&cache_lock);
+  struct ahead *ahead = list_entry (temp, struct ahead, e);
+  struct cache_entry *c = cache_lookup (ahead);
+  //lul
+  if (c == NULL)
+	c = cache_evict_SC (c->sector, false);
+
+  list_remove (temp);
+  free (ahead);
+  lock_release (&cache_lock);
+  /*
+  disk_sector_t *temp = calloc (1, sizeof *temp);
+  if (temp){
+	*temp = ahead+1;
+	thread_create ("read",0, read_ahead, temp);
+  }
+  can_read_ahead = true;
+  */
   }
 }
